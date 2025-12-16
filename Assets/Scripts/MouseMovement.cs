@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class MouseMovement : MonoBehaviour
 {
 
-    public float mouseSensitivity = 500f;
+    public float mouseSensitivity = 750f;
 
     float xRotation = 0f;
     float yRotation = 0f;
