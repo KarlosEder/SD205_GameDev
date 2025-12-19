@@ -1,39 +1,42 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderGraph.Internal;
 
 public class MouseMovement : MonoBehaviour
 {
+    public float sensX;
+    public float sensY;
 
-    public float mouseSensitivity = 750f;
-
-    float xRotation = 0f;
-    float yRotation = 0f;
-
+    // Set clamping
     public float topClamp = -90f;
     public float bottomClamp = 90f;
 
-    void Start()
+    public Transform playerBody;
+
+    float xRotation = 0f;
+    float yRotation;
+
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
-    void Update()
+    private void Update()
     {
-        // Mouse inputs
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        // Get mouse input
+        float mouseX = Input.GetAxisRaw("Mouse X") * sensX * Time.deltaTime;
+        float mouseY = Input.GetAxisRaw("Mouse Y") * sensY * Time.deltaTime;
 
-        // X axis rotation 
+        yRotation += mouseX;
         xRotation -= mouseY;
 
         // Clamp rotation
         xRotation = Mathf.Clamp(xRotation, topClamp, bottomClamp);
 
-        // Y axis rotation 
-        yRotation += mouseX;
-
-        // Apply rotations to transform
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
+        // Rotate camera and orientation
+        playerBody.Rotate(Vector3.up * mouseX);
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }

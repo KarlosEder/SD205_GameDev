@@ -1,32 +1,44 @@
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
-    // Set health 
+    // Health 
     public float maxHealth = 100f;
     public float currentHealth;
 
-    // Set shield
+    // Shield
     public float maxShield = 100f;
     public float currentShield;
 
-    // Set shield recharge
+    // Shield recharge
     public float rechargeDelay = 3f;
     public float rechargeRate = 40f;
 
     private Coroutine rechargeCoroutine;
+
+    // Health / shield counters
+    public TextMeshProUGUI healthCounter;
+    public TextMeshProUGUI shieldCounter;
 
     public HealthBar healthBar;
     public HealthBar shieldBar;
 
     void Start()
     {
+        // Set health / shield
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
 
         currentShield = maxShield;
         shieldBar.SetMaxShield(maxShield);
+
+        // Set counters
+        healthCounter.text = currentHealth.ToString() + "/" + maxHealth.ToString();
+        shieldCounter.text = currentShield.ToString() + "/" + maxShield.ToString();
     }
 
     void Update()
