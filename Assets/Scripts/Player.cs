@@ -27,6 +27,12 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public HealthBar shieldBar;
 
+    // Pause
+    public GameObject pauseUI;
+    public bool isPaused = false;
+
+    public GameObject HUDUI;
+
     void Start()
     {
         // Set health / shield
@@ -39,6 +45,8 @@ public class Player : MonoBehaviour
         // Set counters
         healthCounter.text = currentHealth.ToString() + "/" + maxHealth.ToString();
         shieldCounter.text = currentShield.ToString() + "/" + maxShield.ToString();
+
+        UpdateUI();
     }
 
     void Update()
@@ -47,6 +55,39 @@ public class Player : MonoBehaviour
         {
             TakeDamage(10);
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                ResumeGame();
+            }
+            else
+            {
+                PauseGame();
+            }
+        }
+    }
+
+    // Pause game
+    void PauseGame()
+    {
+        pauseUI.SetActive(true);
+        HUDUI.SetActive(false);
+        Time.timeScale = 0f;
+        isPaused = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    void ResumeGame()
+    {
+        pauseUI.SetActive(false);
+        HUDUI.SetActive(true);
+        Time.timeScale = 1f;
+        isPaused = false;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.None;
     }
 
     public void TakeDamage(float damage)
@@ -73,7 +114,9 @@ public class Player : MonoBehaviour
             ApplyHealthDamage(damage);
         }
 
-        shieldBar.SetShield(currentShield);
+        /*shieldBar.SetShield(currentShield);*/
+
+        UpdateUI();
 
         // Start shield recharge
         rechargeCoroutine = StartCoroutine(RechargeShield());
@@ -90,7 +133,9 @@ public class Player : MonoBehaviour
             currentShield += rechargeRate * Time.deltaTime;
             currentShield = Mathf.Clamp(currentShield, 0, maxShield);
 
-            shieldBar.SetShield((int)currentShield);
+            /*shieldBar.SetShield((int)currentShield);*/
+
+            UpdateUI();
 
             yield return null;
         }
@@ -101,12 +146,23 @@ public class Player : MonoBehaviour
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
-        healthBar.SetHealth(currentHealth);
+        /*healthBar.SetHealth(currentHealth);*/
 
         if (currentHealth <= 0)
         {
             Die();
         }
+    }
+
+    private void UpdateUI()
+    {
+        // Update sliders
+        healthBar.SetHealth(currentHealth);
+        shieldBar.SetHealth(currentShield);
+
+        // Update text counters
+        healthCounter.text = $"{Mathf.CeilToInt(currentHealth)} / {maxHealth}";
+        shieldCounter.text = $"{Mathf.CeilToInt(currentShield)} / {maxShield}";
     }
 
     private void Die()
