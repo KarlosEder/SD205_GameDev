@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,6 +34,9 @@ public class Player : MonoBehaviour
 
     public GameObject HUDUI;
 
+    // Item list
+    public List<ItemList> items = new List<ItemList>();
+
     void Start()
     {
         // Set health / shield
@@ -47,15 +51,24 @@ public class Player : MonoBehaviour
         shieldCounter.text = currentShield.ToString() + "/" + maxShield.ToString();
 
         UpdateUI();
+
+        // Item test
+        MaxHealth item = new MaxHealth();
+        items.Add(new ItemList(item, item.GiveName(), 1));
+
+        // Start item loop
+        StartCoroutine(CallItemUpdate());
     }
 
     void Update()
     {
+        // Damage testing
         if (Input.GetKeyDown(KeyCode.P))
         {
             TakeDamage(10);
         }
 
+        // Pause menu
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -66,6 +79,27 @@ public class Player : MonoBehaviour
             {
                 PauseGame();
             }
+        }
+    }
+
+    // Items
+    IEnumerator CallItemUpdate()
+    {
+        foreach (ItemList i in items)
+        {
+            i.item.Update(this, i.stacks);
+        }
+
+        yield return new WaitForSeconds(1);
+
+        StartCoroutine(CallItemUpdate());
+    }
+
+    public void CallItemOnHit(Target target)
+    {
+        foreach (ItemList i in items)
+        {
+            i.item.OnHit(this, target, i.stacks);
         }
     }
 
@@ -114,8 +148,6 @@ public class Player : MonoBehaviour
             ApplyHealthDamage(damage);
         }
 
-        /*shieldBar.SetShield(currentShield);*/
-
         UpdateUI();
 
         // Start shield recharge
@@ -133,8 +165,6 @@ public class Player : MonoBehaviour
             currentShield += rechargeRate * Time.deltaTime;
             currentShield = Mathf.Clamp(currentShield, 0, maxShield);
 
-            /*shieldBar.SetShield((int)currentShield);*/
-
             UpdateUI();
 
             yield return null;
@@ -145,8 +175,6 @@ public class Player : MonoBehaviour
     {
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        /*healthBar.SetHealth(currentHealth);*/
 
         if (currentHealth <= 0)
         {
