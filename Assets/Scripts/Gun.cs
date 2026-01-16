@@ -1,5 +1,7 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Gun : MonoBehaviour
 {
@@ -8,7 +10,26 @@ public class Gun : MonoBehaviour
     public float range = 100f;
     public float fireRate = 5f;
     public float knockback = 100;
+    public float maxMagazineSize = 21;
+    public float magazineSize = 21;
+    public float reloadSpeed = 1.5f;
 
+    private float nextTimeToFire = 0f;
+
+    public bool isFiring;
+    public bool isReloading;
+    public TextMeshProUGUI ammoCounter;
+
+    // SFX
+    public AudioSource audioSource;
+    public AudioClip dryFireClip;
+    public AudioClip gunshotClip;
+    public AudioClip reloadMag;
+    public AudioClip reloadCock;
+
+    public bool hasDryFired;
+
+    // Particle system
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
     public GameObject impactParticles;
@@ -16,17 +37,94 @@ public class Gun : MonoBehaviour
     public GameObject bulletTracer;
     public Transform firePoint;
 
-    private float nextTimeToFire = 0f;
-
     void Update()
     {
+        // Update ammo counter
+        ammoCounter.text = magazineSize.ToString();
+
+        // Manual reload
+        if (Input.GetKeyDown(KeyCode.R) && !isReloading && magazineSize < maxMagazineSize)
+        {
+            StartCoroutine(Reload());
+            return;
+        }
+
+        // Block firing while reloading
+        if (isReloading)
+            return;
+
+        // Full auto
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Shoot();
+            if (magazineSize > 0)
+            {
+                // Fire normally
+                magazineSize--;
+                hasDryFired = false;
+
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Shoot();
+            }
+            else
+            {
+                // Ammo empty: play dry-fire once and stop firing
+                if (!hasDryFired)
+                {
+                    if (audioSource != null && dryFireClip != null)
+                    {
+                        audioSource.pitch = Random.Range(0.95f, 1.05f);
+                        audioSource.PlayOneShot(dryFireClip, 1f);
+                        audioSource.pitch = 1f;
+                    }
+
+                    hasDryFired = true;
+                    nextTimeToFire = Time.time + 0.2f;
+                }
+                else
+                {
+                    // Second click auto reloads
+                    if (!isReloading)
+                    {
+                        StartCoroutine(Reload());
+                    }
+                }
+            }
         }
     }
 
+    // Reload
+    IEnumerator Reload()
+    {
+        isReloading = true;
+        ammoCounter.text = "RELOADING";
+
+        // Mag removal/insert sound 
+        if (audioSource != null && reloadMag != null)
+        {
+            audioSource.PlayOneShot(reloadMag, 1f);
+        }
+
+        // Wait
+        yield return new WaitForSeconds(reloadSpeed * 0.7f); // e.g., magazine takes 70% of the reload
+
+        // Play cocking sound after inserting mag
+        if (audioSource != null && reloadCock != null)
+        {
+            audioSource.PlayOneShot(reloadCock, 1f);
+        }
+
+        // Finish reload
+        yield return new WaitForSeconds(reloadSpeed * 0.3f); // remaining time
+
+        magazineSize = maxMagazineSize;
+        hasDryFired = false;
+        isReloading = false;
+
+        // Add a slight delay before shooting again
+        nextTimeToFire = Time.time + 0.2f; 
+    }
+
+    // Bullet tracer
     void SpawnTracer(Vector3 hitpoint)
     {
         GameObject tracerGO = Instantiate(bulletTracer, firePoint.position, Quaternion.identity);
@@ -51,9 +149,26 @@ public class Gun : MonoBehaviour
         Destroy(tracer.gameObject, tracer.time);
     }
 
+    // Fire weapon
     void Shoot()
     {
+        // Play VFX
         muzzleFlash.Play();
+
+        // Play SFX
+        if (audioSource != null && gunshotClip != null)
+        {
+            // Randomize pitch
+            audioSource.pitch = Random.Range(0.4f, 1f);
+
+            // Randomize volume 
+            float volume = Random.Range(0.8f, 1.5f);
+
+            audioSource.PlayOneShot(gunshotClip, volume);
+
+            // Reset pitch to avoid affecting other sounds
+            audioSource.pitch = 1f;
+        }
 
         RaycastHit hit;
         Vector3 hitPoint;
