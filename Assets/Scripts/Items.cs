@@ -18,6 +18,14 @@ public abstract class Items
     {
 
     }
+    public virtual void OnTick(Player player, int stacks)
+    {
+
+    }
+    public virtual void OnStacksChanged(Player player, int stacks)
+    {
+
+    }
 }
 
 // - - - - Healing items - - - -
@@ -25,6 +33,8 @@ public abstract class Items
 // Max Health
 public class MaxHealth : Items
 {
+    private int appliedStacks = 0;
+
     public override string GiveName()
     {
         return "Max Health";
@@ -33,7 +43,19 @@ public class MaxHealth : Items
     // Health increase amount
     public override void Update(Player player, int stacks)
     {
-        player.maxHealth += 3 + (2 * stacks);
+        if (stacks <= appliedStacks)
+            return;
+
+        int newStacks = stacks - appliedStacks;
+
+        int healthPerStack = 10; 
+
+        int totalIncrease = newStacks * healthPerStack;
+
+        player.maxHealth += totalIncrease;
+        player.currentHealth += totalIncrease;
+
+        appliedStacks = stacks;
     }
 }
 
@@ -45,16 +67,18 @@ public class HealthRegen : Items
         return "Health Regen";
     }
 
-    // Health regen amount
+    // Regen amount
     public override void Update(Player player, int stacks)
     {
-        player.currentHealth += 3 + (2* stacks);
+        player.Heal(3 + (2 * stacks));
     }
 }
 
 // Max Shield
 public class MaxShield : Items
 {
+    private int appliedStacks = 0;
+
     public override string GiveName()
     {
         return "Max Shield";
@@ -63,7 +87,19 @@ public class MaxShield : Items
     // Shield increase amount
     public override void Update(Player player, int stacks)
     {
-        player.maxShield += 3 + (2 * stacks);
+        if (stacks <= appliedStacks)
+            return;
+
+        int newStacks = stacks - appliedStacks;
+
+        int shieldPerStack = 10;
+
+        int totalIncrease = newStacks * shieldPerStack;
+
+        player.maxShield += totalIncrease;
+        player.currentShield += totalIncrease;
+
+        appliedStacks = stacks;
     }
 }
 
@@ -78,13 +114,15 @@ public class ShieldRegen : Items
     // Shield regen amount
     public override void Update(Player player, int stacks)
     {
-        player.currentShield += 3 + (2 * stacks);
+        player.RechargeShield(3 + (2 * stacks));
     }
 }
 
 // Shield Recharge Delay
 public class ShieldDelay : Items
 {
+    private int appliedStacks = 0;
+
     public override string GiveName()
     {
         return "Shield Delay";
@@ -93,7 +131,20 @@ public class ShieldDelay : Items
     // Shield delay amount
     public override void Update(Player player, int stacks)
     {
-        player.rechargeDelay += 1 + (2 * stacks);
+        if (stacks <= appliedStacks)
+            return;
+
+        int newStacks = stacks - appliedStacks;
+
+        float reductionPerStack = 0.2f; 
+
+        // Reduce recharge delay
+        player.rechargeDelay -= newStacks * reductionPerStack;
+
+        // Clamp to 0.1
+        player.rechargeDelay = Mathf.Max(player.rechargeDelay, 0.1f);
+
+        appliedStacks = stacks;
     }
 }
 
@@ -102,19 +153,26 @@ public class ShieldDelay : Items
 // DMG up
 public class DamageUp : Items
 {
+    private int appliedStacks = 0;
+
     public override string GiveName()
     {
         return "Damage Up";
     }
 
-    public override void OnHit(Player player, Target target, int stacks)
+    // Damage increase amount
+    public override void Update(Gun gun, int stacks)
     {
-        target.health -= 10 * stacks;
+        if (stacks <= appliedStacks) return;
+
+        int newStacks = stacks - appliedStacks;
+        gun.damage += newStacks * 2f; 
+        appliedStacks = stacks;
     }
 }
 
-    // Burn DOT
-    public class BurnDamage : Items
+// Burn DOT
+public class BurnDamage : Items
 {
     public override string GiveName()
     {

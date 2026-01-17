@@ -28,6 +28,9 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public HealthBar shieldBar;
 
+    // Gun
+    public Gun playerGun;
+
     // Pause
     public GameObject pauseUI;
     public bool isPaused = false;
@@ -53,7 +56,7 @@ public class Player : MonoBehaviour
         UpdateUI();
 
         // Item test
-        MaxHealth item = new MaxHealth();
+        MaxShield item = new MaxShield();
         items.Add(new ItemList(item, item.GiveName(), 1));
 
         // Start item loop
@@ -85,10 +88,24 @@ public class Player : MonoBehaviour
     // Items
     IEnumerator CallItemUpdate()
     {
+        // Stop updating items if dead
+        if (currentHealth <= 0)
+            yield break;
+
+        // Update all items
         foreach (ItemList i in items)
         {
+            // Player stat items
             i.item.Update(this, i.stacks);
+
+            // Gun stat items
+            if (playerGun != null)
+            {
+                i.item.Update(playerGun, i.stacks);
+            }
         }
+
+        UpdateUI();
 
         yield return new WaitForSeconds(1);
 
@@ -162,6 +179,10 @@ public class Player : MonoBehaviour
         // Shield recharge
         while (currentShield < maxShield)
         {
+            // Stop if dead
+            if (currentHealth <= 0)
+                yield break;
+
             currentShield += rechargeRate * Time.deltaTime;
             currentShield = Mathf.Clamp(currentShield, 0, maxShield);
 
@@ -171,8 +192,13 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Player damage recieved
     public void ApplyHealthDamage(float amount)
     {
+        // If dead
+        if (currentHealth <= 0)
+            return;
+
         currentHealth -= amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
 
@@ -182,11 +208,40 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Healing
+    public void Heal(float amount)
+    {
+        // Don't heal if the player is dead
+        if (currentHealth <= 0)
+            return;
+
+        currentHealth += amount;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+
+        UpdateUI();
+    }
+
+    // Shield
+    public void RechargeShield(float amount)
+    {
+        // Stop shield regen if player is dead
+        if (currentHealth <= 0)
+            return;
+
+        currentShield += amount;
+        currentShield = Mathf.Clamp(currentShield, 0, maxShield);
+
+        UpdateUI();
+    }
+
     private void UpdateUI()
     {
         // Update sliders
+        healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
-        shieldBar.SetHealth(currentShield);
+
+        shieldBar.SetMaxShield(maxShield);
+        shieldBar.SetShield(currentShield);
 
         // Update text counters
         healthCounter.text = $"{Mathf.CeilToInt(currentHealth)} / {maxHealth}";
