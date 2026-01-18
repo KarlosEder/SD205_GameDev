@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,36 +11,61 @@ public class Target : MonoBehaviour
     public Canvas uiCanvas;
 
     public float health = 50f;
+    private Coroutine burnCoroutine;
 
     private List<DamageNumbers> activeDamageTexts = new List<DamageNumbers>();
 
     public void TakeDamage(float amount)
     {
-        // Subtract health
+        TakeDamage(amount, false); 
+    }
+
+    public void TakeDamage(float amount, bool isBurning = false)
+    {
         health -= amount;
 
-        // Spawn damage text
+        // TEST
+        Debug.Log($"Took {amount} damage. Health: {health} | Burn: {isBurning}");
+
+        Debug.Log($"Spawning damage number: {amount}, burn={isBurning}");
+
         if (damageNumbers != null && uiCanvas != null)
         {
             GameObject dmgTextGO = Instantiate(damageNumbers, uiCanvas.transform);
             DamageNumbers dt = dmgTextGO.GetComponent<DamageNumbers>();
 
-            // Calculate a vertical offset based on how many active damage numbers exist
-            Vector3 spawnOffset = Vector3.up * (2f + activeDamageTexts.Count * 0.3f);
-
-            dt.Initialize(transform, amount.ToString("0"), spawnOffset);
-
-            activeDamageTexts.Add(dt);
-
-            // Remove from list when destroyed
-            dt.OnDestroyed += () => activeDamageTexts.Remove(dt);
+            Vector3 spawnOffset = Vector3.up * 2f;
+            dt.Initialize(transform, amount.ToString("0"), spawnOffset, isBurning);
         }
 
-        // Check if target is dead
         if (health <= 0)
-        {
             Die();
+    }
+
+    public void ApplyBurn(float damagePerTick, float duration, float tickRate)
+    {
+        // Restart burn if already burning
+        if (burnCoroutine != null)
+            StopCoroutine(burnCoroutine);
+
+        burnCoroutine = StartCoroutine(BurnRoutine(damagePerTick, duration, tickRate));
+    }
+
+    IEnumerator BurnRoutine(float damage, float duration, float tickRate)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < duration && health > 0)
+        {
+            TakeDamage(damage, true);
+            elapsed += tickRate;
+            yield return new WaitForSeconds(tickRate);
         }
+
+        burnCoroutine = null;
+
+        // TEST
+        Debug.Log($"Burn tick: {damage} damage at elapsed {elapsed}");
     }
 
     void Die()

@@ -56,8 +56,8 @@ public class Player : MonoBehaviour
         UpdateUI();
 
         // Item test
-        MaxShield item = new MaxShield();
-        items.Add(new ItemList(item, item.GiveName(), 1));
+        BurnDamage item = new BurnDamage();
+        items.Add(new ItemList(item, item.GiveName(), 2));
 
         // Start item loop
         StartCoroutine(CallItemUpdate());

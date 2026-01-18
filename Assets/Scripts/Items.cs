@@ -174,41 +174,71 @@ public class DamageUp : Items
 // Burn DOT
 public class BurnDamage : Items
 {
+    private int appliedStacks = 0;
+
     public override string GiveName()
     {
-        return "Burn Damage";
+        return "Burn Damage Up";
     }
 
-    public override void OnHit(Player player, Target target, int stacks)
+    // Burn Damage increase amount
+    public override void Update(Gun gun, int stacks)
     {
-        target.health -= 10 * stacks;
+        if (stacks <= appliedStacks) return;
+
+        int newStacks = stacks - appliedStacks;
+        gun.burnDamage += newStacks * 2.5f;
+
+        if (gun.burnDuration <= 0f)
+            gun.burnDuration = 3f;       
+        if (gun.burnTickRate <= 0f)
+            gun.burnTickRate = 0.5f;
+
+        appliedStacks = stacks;
+
+        // TEST
+        Debug.Log($"Applying BurnDamage item: gun.burnDamage={gun.burnDamage}");
     }
 }
 
 // Fire Rate Up
 public class FireRateUp : Items
 {
+    private int appliedStacks = 0;
+
     public override string GiveName()
     {
         return "Fire Rate Up";
     }
+
+    // Fire Rate increase amount
     public override void Update(Gun gun, int stacks)
     {
-        gun.fireRate += 3 + (2 * stacks);
-    }
+        if (stacks <= appliedStacks) return;
 
+        int newStacks = stacks - appliedStacks;
+        gun.fireRate += newStacks * 2f;
+        appliedStacks = stacks;
+    }
 }
 
 // Knock Back Up
 public class KnockBackUp : Items
 {
+    private int appliedStacks = 0;
+
     public override string GiveName()
     {
         return "Knock Back Up";
     }
+
+    // Knock back increase amount
     public override void Update(Gun gun, int stacks)
     {
-        gun.knockback += 13 + (2 * stacks);
-    }
+        if (stacks <= appliedStacks) return;
 
+        int newStacks = stacks - appliedStacks;
+        gun.knockback += newStacks * 5f;
+        appliedStacks = stacks;
+    }
 }

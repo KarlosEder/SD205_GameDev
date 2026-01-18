@@ -9,12 +9,15 @@ public class DamageNumbers : MonoBehaviour
     public float fadeTime = 1f;
 
     // Offset
-    public Vector3 randomOffsetRange = new Vector3(0.5f, 0.5f, 0f); 
+    public Vector2 randomOffsetRange = new Vector2(0.5f, 0.5f);
     private Vector3 initialOffset; 
 
     private TextMeshProUGUI text;
     private Transform target;
     private float elapsed = 0f;
+
+    // DOT
+    private bool isBurning;
 
     // Destroy
     public Action OnDestroyed;
@@ -24,16 +27,26 @@ public class DamageNumbers : MonoBehaviour
         target = null;
     }
 
-    public void Initialize(Transform target, string str, Vector3 spawnOffset)
+    public void Initialize(Transform target, string amountText, Vector3 spawnOffset, bool isBurning)
     {
         this.target = target;
-        text = GetComponent<TextMeshProUGUI>();
-        text.text = str;
+        this.isBurning = isBurning;
 
-        // Add spawn offset
+        text = GetComponent<TextMeshProUGUI>();
+        if (text == null )
+        {
+            Debug.LogError("DamageNumbers prefab is missing a component");
+            return;
+        }
+
+        text.text = amountText;
+
+        // Offset variation
         initialOffset = spawnOffset;
         initialOffset.x += UnityEngine.Random.Range(-randomOffsetRange.x, randomOffsetRange.x);
         initialOffset.y += UnityEngine.Random.Range(0, randomOffsetRange.y);
+
+        text.color = isBurning ? new Color(1f, 0.4f, 0.1f) : Color.white;
     }
 
     void Update()
@@ -43,7 +56,11 @@ public class DamageNumbers : MonoBehaviour
         if (target != null)
         {
             Vector3 screenPos = Camera.main.WorldToScreenPoint(target.position + initialOffset);
+
+            // Add floating effect
             screenPos.y += floatSpeed * Time.deltaTime;
+
+            // Apply the position to the UI element
             transform.position = screenPos;
         }
         else
@@ -52,7 +69,7 @@ public class DamageNumbers : MonoBehaviour
             transform.position += new Vector3(0, floatSpeed * Time.deltaTime, 0);
         }
 
-        // Fade out
+        // Fade out over time
         elapsed += Time.deltaTime;
         text.alpha = Mathf.Lerp(1f, 0f, elapsed / fadeTime);
 
