@@ -1,3 +1,4 @@
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,6 +7,10 @@ public class UIManager : MonoBehaviour
 {
     // In-game menus
     public GameObject pauseUI;
+    public GameObject hudUI;
+    private bool isPaused;
+
+    public static bool IsPaused { get; private set; }
 
     // Lobby menus
     public CanvasGroup abilitiesGroup;
@@ -32,6 +37,43 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Lobby");
     }
 
+    void Update()
+    {
+        // Toggle pause with Escape key
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetPaused(!isPaused);
+        }
+    }
+
+    void SetPaused(bool paused)
+    {
+        if (isPaused == paused)
+            return;
+
+        isPaused = paused;
+        IsPaused = paused;
+
+        // Pause menu
+        if (pauseUI != null)
+            pauseUI.SetActive(paused);
+
+        // HUD
+        if (hudUI != null)
+            hudUI.SetActive(!paused); 
+
+        // Time and cursor
+        Time.timeScale = paused ? 0f : 1f;
+        Cursor.lockState = paused ? CursorLockMode.None : CursorLockMode.Locked;
+        Cursor.visible = paused;
+    }
+
+    // Pause
+    public void OnPressPause() => SetPaused(true);
+
+    // Resume
+    public void OnPressResume() => SetPaused(false);
+
     // Quit to menu
     public void OnPressMainMenu()
     {
@@ -42,18 +84,6 @@ public class UIManager : MonoBehaviour
     public void OnPressReady()
     {
         SceneManager.LoadScene("Level_01");
-    }
-
-     // Pause
-    public void OnPressPause()
-    {
-        pauseUI.SetActive(true);
-    }
-
-    // Resume
-    public void OnPressResume()
-    {
-        pauseUI.SetActive(false);
     }
 
     // Lobby 

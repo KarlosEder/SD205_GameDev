@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEngine.EventSystems;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -63,6 +64,9 @@ public class Gun : MonoBehaviour
     public Transform gunMesh;
     private Animator gunAnimator;
 
+    [SerializeField]
+    private Animator PlayerAnimator;
+
     // Store initial position
     private void Start()
     {
@@ -74,6 +78,17 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+        if (UIManager.IsPaused)
+            return;
+
+        // When paused
+        if (Time.timeScale == 0f)
+            return;
+
+        // Block gun input when clicking UI
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
         // Update ammo counter
         ammoCounter.text = magazineSize.ToString();
 
@@ -125,6 +140,7 @@ public class Gun : MonoBehaviour
                 }
             }
         }
+
         ApplySway();
         ApplyRecoilRecovery();
     }
@@ -272,6 +288,18 @@ public class Gun : MonoBehaviour
         isReloading = false;
 
         // Add a slight delay before shooting again
+        nextTimeToFire = Time.time + 0.2f;
+    }
+
+    // Reload animator
+    private void EndReload()
+    {
+        // Refill the magazine
+        magazineSize = maxMagazineSize;
+        hasDryFired = false;
+        isReloading = false;
+
+        // Slight delay before next shot
         nextTimeToFire = Time.time + 0.2f;
     }
 
