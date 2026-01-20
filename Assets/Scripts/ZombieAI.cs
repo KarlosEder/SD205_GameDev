@@ -45,6 +45,9 @@ public class ZombieAI : MonoBehaviour
 
         // Set stopping distance to match attack range
         agent.stoppingDistance = attackRange;
+
+        // Debug status check
+        Invoke("DebugNavMeshStatus", 1f);
     }
 
     void Update()
@@ -52,7 +55,7 @@ public class ZombieAI : MonoBehaviour
         if (isDead || player == null)
             return;
 
-        // Check if zombie has died (using Target script's health)
+        // Check if zombie died
         if (targetScript != null && targetScript.health <= 0)
         {
             Die();
@@ -62,14 +65,15 @@ public class ZombieAI : MonoBehaviour
         // Calculate distance to player
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        // Only chase if player is within detection range
+        // STATE 1: Player is within detection range - ENGAGE
         if (distanceToPlayer <= detectionRange)
         {
-            // If in attack range
+            // STATE 1A: Close enough to attack
             if (distanceToPlayer <= attackRange)
             {
-                // Stop moving
+                // Stop all movement
                 agent.isStopped = true;
+                agent.ResetPath(); // Clear any path
 
                 // Face the player
                 Vector3 direction = (player.position - transform.position).normalized;
@@ -79,29 +83,46 @@ public class ZombieAI : MonoBehaviour
                 // Set speed to 0 for idle animation
                 animator.SetFloat("Speed", 0f);
 
-                // Attack if cooldown is ready
+                // Attack if not currently attacking and cooldown ready
                 if (!isAttacking && Time.time >= lastAttackTime + attackCooldown)
                 {
                     Attack();
                 }
             }
+            // STATE 1B: Detected but not in attack range - CHASE
             else
             {
-                // Player detected but not in attack range - CHASE
+                // Make sure zombie is allowed to move
                 agent.isStopped = false;
 
-                // Move toward player
+                // Chase the player
                 agent.SetDestination(player.position);
 
-                // Set animator speed based on movement
+                // Face movement direction while running
+                if (agent.velocity.magnitude > 0.1f)
+                {
+                    Vector3 direction = agent.velocity.normalized;
+                    Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                    transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+                }
+
+                // Set animator speed based on actual movement
                 animator.SetFloat("Speed", agent.velocity.magnitude);
+
+                Debug.Log($"CHASING - Distance: {distanceToPlayer:F1}m | Speed: {agent.velocity.magnitude:F2}");
             }
         }
+        // STATE 2: Player is OUT of detection range - IDLE
         else
         {
-            // Player out of detection range - idle
+            // Stop moving completely
             agent.isStopped = true;
+            agent.ResetPath(); // Clear any destination
+
+            // Set to idle animation
             animator.SetFloat("Speed", 0f);
+
+            Debug.Log($"IDLE - Player too far: {distanceToPlayer:F1}m");
         }
     }
 
@@ -111,8 +132,10 @@ public class ZombieAI : MonoBehaviour
         lastAttackTime = Time.time;
         animator.SetTrigger("AttackTrigger");
 
+        Debug.Log("ATTACKING!");
+
         // Reset attacking flag after animation duration
-        // Adjust 2.0f to match the actual attack animation length/as needed - Jack
+        // Adjust to match the attack animation length if needed - Jack
         StartCoroutine(ResetAttack(2.0f));
     }
 
@@ -122,7 +145,7 @@ public class ZombieAI : MonoBehaviour
         isAttacking = false;
     }
 
-    // This method will be called by an Animation Event
+    // Called by Animation Event on the attack animation
     public void DealDamage()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -140,8 +163,9 @@ public class ZombieAI : MonoBehaviour
         isDead = true;
         animator.SetBool("IsDead", true);
 
-        // Stop moving
+        // Stop all movement
         agent.isStopped = true;
+        agent.ResetPath();
         agent.enabled = false;
 
         // Disable collider so player can walk through
@@ -152,7 +176,42 @@ public class ZombieAI : MonoBehaviour
         // Disable this script
         this.enabled = false;
 
-        // Destroy after animation finishes
+        // Destroy after death animation finishes
         Destroy(gameObject, 5f);
+    }
+
+    // Debug NavMesh status
+    void DebugNavMeshStatus()
+    {
+        Debug.Log("=================================");
+        Debug.Log($"ZOMBIE POSITION: {transform.position}");
+        Debug.Log($"IS ON NAVMESH: {agent.isOnNavMesh}");
+        Debug.Log($"AGENT ENABLED: {agent.enabled}");
+
+        if (player != null)
+        {
+            float dist = Vector3.Distance(transform.position, player.position);
+            Debug.Log($"DISTANCE TO PLAYER: {dist:F1}m");
+            Debug.Log($"SHOULD BE CHASING: {dist <= detectionRange}");
+        }
+
+        Debug.Log("=================================");
+
+        if (!agent.isOnNavMesh)
+        {
+            Debug.LogError("PROBLEM: Zombie is NOT on NavMesh!");
+        }
+    }
+
+    //Visualize detection range in editor
+    void OnDrawGizmosSelected()
+    {
+        // Detection range (yellow)
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, detectionRange);
+
+        // Attack range (red)
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 }
