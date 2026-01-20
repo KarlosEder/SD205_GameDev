@@ -9,8 +9,9 @@ public class ZombieAI : MonoBehaviour
     public Animator animator;
 
     [Header("Settings")]
-    public float attackRange = 2.0f;
-    public float attackCooldown = 2.0f;  // Time between attacks
+    public float detectionRange = 15.0f;  // How far zombie can "see" player
+    public float attackRange = 2.0f;       // How close to attack
+    public float attackCooldown = 2.0f;    // Time between attacks
     public float attackDamage = 10f;
 
     private NavMeshAgent agent;
@@ -51,7 +52,7 @@ public class ZombieAI : MonoBehaviour
         if (isDead || player == null)
             return;
 
-        // Check if we died (using Target script's health)
+        // Check if zombie has died (using Target script's health)
         if (targetScript != null && targetScript.health <= 0)
         {
             Die();
@@ -61,36 +62,46 @@ public class ZombieAI : MonoBehaviour
         // Calculate distance to player
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
-        // If in attack range
-        if (distanceToPlayer <= attackRange)
+        // Only chase if player is within detection range
+        if (distanceToPlayer <= detectionRange)
         {
-            // Stop moving
-            agent.isStopped = true;
-
-            // Face the player
-            Vector3 direction = (player.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
-            transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
-
-            // Set speed to 0 for idle animation
-            animator.SetFloat("Speed", 0f);
-
-            // Attack if cooldown is ready
-            if (!isAttacking && Time.time >= lastAttackTime + attackCooldown)
+            // If in attack range
+            if (distanceToPlayer <= attackRange)
             {
-                Attack();
+                // Stop moving
+                agent.isStopped = true;
+
+                // Face the player
+                Vector3 direction = (player.position - transform.position).normalized;
+                Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+                transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 10f);
+
+                // Set speed to 0 for idle animation
+                animator.SetFloat("Speed", 0f);
+
+                // Attack if cooldown is ready
+                if (!isAttacking && Time.time >= lastAttackTime + attackCooldown)
+                {
+                    Attack();
+                }
+            }
+            else
+            {
+                // Player detected but not in attack range - CHASE
+                agent.isStopped = false;
+
+                // Move toward player
+                agent.SetDestination(player.position);
+
+                // Set animator speed based on movement
+                animator.SetFloat("Speed", agent.velocity.magnitude);
             }
         }
         else
         {
-            // Resume moving if we stopped
-            agent.isStopped = false;
-
-            // Move toward player
-            agent.SetDestination(player.position);
-
-            // Set animator speed based on movement
-            animator.SetFloat("Speed", agent.velocity.magnitude);
+            // Player out of detection range - idle
+            agent.isStopped = true;
+            animator.SetFloat("Speed", 0f);
         }
     }
 
@@ -101,7 +112,7 @@ public class ZombieAI : MonoBehaviour
         animator.SetTrigger("AttackTrigger");
 
         // Reset attacking flag after animation duration
-        // Adjust 2.0f to match your actual attack animation length
+        // Adjust 2.0f to match the actual attack animation length/as needed - Jack
         StartCoroutine(ResetAttack(2.0f));
     }
 
@@ -112,7 +123,6 @@ public class ZombieAI : MonoBehaviour
     }
 
     // This method will be called by an Animation Event
-    // We'll set this up on the attack animation next
     public void DealDamage()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
@@ -142,7 +152,7 @@ public class ZombieAI : MonoBehaviour
         // Disable this script
         this.enabled = false;
 
-        // Destroy after animation finishes (5 seconds should be enough)
+        // Destroy after animation finishes
         Destroy(gameObject, 5f);
     }
 }
