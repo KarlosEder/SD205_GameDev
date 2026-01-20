@@ -70,6 +70,17 @@ public class Target : MonoBehaviour
 
     void Die()
     {
+        // Check if this is a zombie (has ZombieAI component)
+        ZombieAI zombieAI = GetComponent<ZombieAI>();
+
+        if (zombieAI != null)
+        {
+            // Let the ZombieAI script handle death
+            // Don't destroy here - ZombieAI will handle it
+            return;
+        }
+
+        // For regular targets (not zombies), destroy immediately
         Destroy(gameObject);
     }
 
