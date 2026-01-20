@@ -1,0 +1,137 @@
+[33mcommit 1504c7147c0c8928df599143e2d3de448a933964[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Tue Jan 20 23:46:18 2026 +1300
+
+    Fixing broken LFS link
+    
+    Cleared Level_01 file - repushing
+
+[33mcommit ecf35bcc69429604c13160e847fa51b5249dce11[m[33m ([m[1;32mVersionFix_01[m[33m)[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Tue Jan 20 20:02:15 2026 +1300
+
+    Enemy AI
+    
+    Added enemy ai - movement, attacking. Minor UI fixes.
+
+[33mcommit da0990cedb6ceadbcc2da7135a72b0f422034c25[m
+Author: JackYooBee <270467001@yoobeestudent.ac.nz>
+Date:   Tue Jan 20 20:01:22 2026 +1300
+
+    Zombie Bug Fixes
+    
+    Zombie now follows player when entering its "aggro" range. Need some tweaks to animation speed to make more fluid. But enemies are mostly operational
+
+[33mcommit 958af893ad98255290020f913dfe33598430624b[m
+Author: JackYooBee <270467001@yoobeestudent.ac.nz>
+Date:   Tue Jan 20 15:32:06 2026 +1300
+
+    Fixed Zombie Death animation
+    
+    Fixed animation issue. Added "aggro range" to ZombieAI script.
+
+[33mcommit bf9f9c44546d7e6809a23f905337d1b0fd494aad[m
+Author: JackYooBee <270467001@yoobeestudent.ac.nz>
+Date:   Tue Jan 20 14:04:34 2026 +1300
+
+    Zombie Attack Script
+    
+    Added script to zombie enemy. Zombie will now attack player when they are close dealing damage to shield first, then health. More animations to be added. Death animation to be fixed.
+
+[33mcommit ea62d82939eb2c75eaafaa8d774d389a60996406[m
+Author: JackYooBee <270467001@yoobeestudent.ac.nz>
+Date:   Tue Jan 20 01:47:59 2026 +1300
+
+    Zombie animation progress
+    
+    Further set up of animations.
+
+[33mcommit 69a7c88d1763724ab9164690c148546ffb2494fc[m
+Author: JackYooBee <270467001@yoobeestudent.ac.nz>
+Date:   Mon Jan 19 15:16:41 2026 +1300
+
+    Zombie Models and Animations
+    
+    Zombies and animations added to the project. Next step to add Target script and set everything up properly
+
+[33mcommit 1d770a83a761e29ac613a1afe096af0b34e99ce8[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Mon Jan 19 13:24:35 2026 +1300
+
+    Bug fixes
+    
+    Tried to continue working on animators, fixed menu bugs.
+
+[33mcommit 97add44b955e1e323742d5cbd848a5c846b7c255[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Sun Jan 18 15:58:35 2026 +1300
+
+    Gun recoil + polish
+    
+    Further item/sfx polish, added recoil to gun. Started implementing animations.
+
+[33mcommit dc05370e64918a0ae1fd528fe6b7b5452c5554c8[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Sat Jan 17 13:23:33 2026 +1300
+
+    Item/enemy updates
+    
+    Further refined roguelike items. Added damage numbers above enemies when shot.
+
+[33mcommit 72956b71b1da8c0b8eb066612ea57d293259c69d[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Fri Jan 16 17:01:31 2026 +1300
+
+    SFX + Further gun and UI polish
+    
+    Filled in content in the loadout screen, added gun reload as well as SFX for gun fire, dry fire, and reload.
+
+[33mcommit e9d687296cd2d2c4baea06cf18f30749eb87bc8b[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Thu Jan 15 16:29:08 2026 +1300
+
+    Rogue-like Item Integration
+    
+    Added scripts for 8 items the player can pickup,
+
+[33mcommit 8e24fe5f7dec5e0710e873278ee497c4e2b69213[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Thu Jan 15 12:31:29 2026 +1300
+
+    Gun + VFX
+    
+    Refined gun scripts and added tracer/impact VFX. Set up more weapon variables and knock back.
+
+[33mcommit bdb333adc1229efad5ec304cf9fbbee0d5a21bad[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Thu Jan 15 09:41:30 2026 +1300
+
+    Quick clean up
+    
+    Cleaned up hierarchy and moved player model to reduce camera clipping.
+
+[33mcommit ae0956628e60aa2d8ccceddcacd4402f950d8f70[m
+Author: JackYooBee <270467001@yoobeestudent.ac.nz>
+Date:   Thu Jan 15 02:20:34 2026 +1300
+
+    Added City Level and Player Model
+    
+    City Level added - Interesting environment to explore and play in.
+    
+    Player Model - Still needs some adjustments to the model. Clashes a little with the camera. Also, need arms to move with the camera.
+
+[33mcommit cc9a89903deb070b324686fc15e0204775b92506[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Thu Jan 8 16:42:11 2026 +1300
+
+    UI and Weapons
+    
+    Completed more UI including pause menu. Added first weapon and scripts as well as particle effects. Polished health and shield bars to now update counters.
+
+[33mcommit 7639aa9b18baa41a1fd4271ae4e7064594fde6b5[m
+Author: KarlosEder <167484213+KarlosEder@users.noreply.github.com>
+Date:   Wed Jan 7 11:18:11 2026 +1300
+
+    UI and Scene setup
+    
+    Added scenes to active build, set up UI manager and script.
