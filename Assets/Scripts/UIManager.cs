@@ -77,12 +77,14 @@ public class UIManager : MonoBehaviour
     // Quit to menu
     public void OnPressMainMenu()
     {
+        MusicManager.Instance.TransitionToMenuMusic(0f);
         SceneManager.LoadScene("MainMenu");
     }
 
     // Ready up
     public void OnPressReady()
     {
+        MusicManager.Instance.TransitionToLevelMusic(1.0f);
         SceneManager.LoadScene("Level_01");
     }
 

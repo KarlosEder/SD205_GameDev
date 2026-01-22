@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class SoundEffectsManager : MonoBehaviour
 {
-    // Audio clips
+    // Audio source
     public AudioSource audioSrc;
+
+    // Audio clips
     public AudioClip[] pressedClips;
     public AudioClip[] highlightClips;
 
