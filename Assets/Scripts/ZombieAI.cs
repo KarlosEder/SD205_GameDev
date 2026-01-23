@@ -9,7 +9,7 @@ public class ZombieAI : MonoBehaviour
     public Animator animator;
 
     [Header("Settings")]
-    public float detectionRange = 15.0f;  // How far zombie can "see" player
+    public float detectionRange = 100.0f;  // How far zombie can "see" player
     public float attackRange = 2.0f;       // How close to attack
     public float attackCooldown = 0.1f;    // Time between combo chains
     public float attackDamage = 10f;
