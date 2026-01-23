@@ -80,6 +80,13 @@ public class Target : MonoBehaviour
             return;
         }
 
+        // For non-zombie targets, spawn drops safely
+        DropRateManager dropManager = GetComponent<DropRateManager>();
+        if (dropManager != null)
+        {
+            dropManager.SpawnDrop();  // spawn XP or item
+        }
+
         // For regular targets (not zombies), destroy immediately
         Destroy(gameObject);
     }

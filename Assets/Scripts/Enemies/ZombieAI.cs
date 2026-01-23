@@ -217,6 +217,10 @@ public class ZombieAI : MonoBehaviour
         // Disable this script
         this.enabled = false;
 
+        DropRateManager dropManager = GetComponent<DropRateManager>();
+        if (dropManager != null)
+            dropManager.SpawnDrop();
+
         // Destroy after death animation finishes
         Destroy(gameObject, 5f);
     }

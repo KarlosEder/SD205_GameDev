@@ -28,6 +28,22 @@ public class Player : MonoBehaviour
     public HealthBar healthBar;
     public HealthBar shieldBar;
 
+    // Experience / level
+    public int experience = 0;
+    public int level = 1;
+    public int experienceCap;
+
+    // Level / XP definition class
+    [System.Serializable]
+    public class LevelRange
+    {
+        public int startLevel;
+        public int endLevel;
+        public int experienceCapIncrease;
+    }
+
+    public List<LevelRange> levelRanges;
+
     // Gun
     public Gun playerGun;
 
@@ -42,6 +58,10 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        // Set XP / Level
+        experienceCap = levelRanges[0].experienceCapIncrease;
+
+
         // Set health / shield
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
@@ -83,6 +103,36 @@ public class Player : MonoBehaviour
                 PauseGame();
             }
         }
+    }
+
+    // XP systems
+    public void IncreaseExperience(int amount)
+    {
+        experience += amount;
+
+        LevelUpChecker();
+    }
+
+    void LevelUpChecker()
+    {
+        if (experience >= experienceCap)
+        {
+            level++;
+            experience = experienceCap;
+
+            int experienceCapIncrease = 0;
+
+            foreach (LevelRange range in levelRanges)
+            {
+                if (level >= range.startLevel && level <= range.endLevel)
+                {
+                    experienceCapIncrease = range.experienceCapIncrease;
+                    break;
+                }
+            }
+
+            experienceCap += experienceCapIncrease;
+        } 
     }
 
     // Items
