@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 5414411507745256232}
   - component: {fileID: 7133241804468716966}
   - component: {fileID: 8750949010338531831}
+  - component: {fileID: -3569896587388611648}
   m_Layer: 9
   m_Name: Zombie_Son_Male_01
   m_TagString: Target
@@ -268,6 +269,22 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-3569896587388611648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935674472271958699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab2d24e689161343985808f488d8768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropRateManager
+  drops:
+  - name: Blue XP
+    itemPrefab: {fileID: 8548559983966909991, guid: 3c615e564c90dc549a8179a7dcd10cdd, type: 3}
+    dropRate: 100
 --- !u!1 &1139863722602531553
 GameObject:
   m_ObjectHideFlags: 0
