@@ -1,0 +1,1717 @@
+[1mdiff --git a/Assets/Prefabs/Items.meta b/Assets/Prefabs/Items.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..cdd46ef[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 6bc0158e199a47440b26ccfce64c6233[m
+[32m+[m[32mfolderAsset: yes[m
+[32m+[m[32mDefaultImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/Items/BurnDamage.asset b/Assets/Prefabs/Items/BurnDamage.asset[m
+[1mnew file mode 100644[m
+[1mindex 0000000..15a73bb[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/BurnDamage.asset[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!114 &11400000[m
+[32m+[m[32mMonoBehaviour:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 0}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_EditorHideFlags: 0[m
+[32m+[m[32m  m_Script: {fileID: 11500000, guid: a547ae56f5ada2b4d9595885686a1a69, type: 3}[m
+[32m+[m[32m  m_Name: BurnDamage[m
+[32m+[m[32m  m_EditorClassIdentifier: Assembly-CSharp::ItemData[m
+[32m+[m[32m  itemName: Burn Damage[m
+[32m+[m[32m  icon: {fileID: 21300000, guid: 845922c59e9269347908f0cc58b29e57, type: 3}[m
+[32m+[m[32m  itemType: 5[m
+[1mdiff --git a/Assets/Prefabs/Items/BurnDamage.asset.meta b/Assets/Prefabs/Items/BurnDamage.asset.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..087758f[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/BurnDamage.asset.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 433489fd3727d2240a20ad2de9938cd1[m
+[32m+[m[32mNativeFormatImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  mainObjectFileID: 11400000[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/Items/DamageUp.asset b/Assets/Prefabs/Items/DamageUp.asset[m
+[1mnew file mode 100644[m
+[1mindex 0000000..507c57d[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/DamageUp.asset[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!114 &11400000[m
+[32m+[m[32mMonoBehaviour:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 0}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_EditorHideFlags: 0[m
+[32m+[m[32m  m_Script: {fileID: 11500000, guid: a547ae56f5ada2b4d9595885686a1a69, type: 3}[m
+[32m+[m[32m  m_Name: DamageUp[m
+[32m+[m[32m  m_EditorClassIdentifier: Assembly-CSharp::ItemData[m
+[32m+[m[32m  itemName: Damage Up[m
+[32m+[m[32m  icon: {fileID: 21300000, guid: ea831c068dece3a45b62774216747d33, type: 3}[m
+[32m+[m[32m  itemType: 4[m
+[1mdiff --git a/Assets/Prefabs/Items/DamageUp.asset.meta b/Assets/Prefabs/Items/DamageUp.asset.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..97879dc[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/DamageUp.asset.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: dbf0f119a97151648805bf059cccf981[m
+[32m+[m[32mNativeFormatImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  mainObjectFileID: 11400000[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/Items/FireRateUp.asset b/Assets/Prefabs/Items/FireRateUp.asset[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8df8022[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/FireRateUp.asset[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!114 &11400000[m
+[32m+[m[32mMonoBehaviour:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 0}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_EditorHideFlags: 0[m
+[32m+[m[32m  m_Script: {fileID: 11500000, guid: a547ae56f5ada2b4d9595885686a1a69, type: 3}[m
+[32m+[m[32m  m_Name: FireRateUp[m
+[32m+[m[32m  m_EditorClassIdentifier: Assembly-CSharp::ItemData[m
+[32m+[m[32m  itemName: Fire Rate Up[m
+[32m+[m[32m  icon: {fileID: 21300000, guid: fc60e4f835437e94584f28206969d97d, type: 3}[m
+[32m+[m[32m  itemType: 6[m
+[1mdiff --git a/Assets/Prefabs/Items/FireRateUp.asset.meta b/Assets/Prefabs/Items/FireRateUp.asset.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..336fdd5[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/FireRateUp.asset.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: b059f67746649ac41a5b60416aee3de8[m
+[32m+[m[32mNativeFormatImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  mainObjectFileID: 11400000[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/Items/HealthRegen.asset b/Assets/Prefabs/Items/HealthRegen.asset[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7f9c276[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/HealthRegen.asset[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!114 &11400000[m
+[32m+[m[32mMonoBehaviour:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 0}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_EditorHideFlags: 0[m
+[32m+[m[32m  m_Script: {fileID: 11500000, guid: a547ae56f5ada2b4d9595885686a1a69, type: 3}[m
+[32m+[m[32m  m_Name: HealthRegen[m
+[32m+[m[32m  m_EditorClassIdentifier: Assembly-CSharp::ItemData[m
+[32m+[m[32m  itemName: Health Regen[m
+[32m+[m[32m  icon: {fileID: 21300000, guid: b928f4bd03f2505449c827d4f744a166, type: 3}[m
+[32m+[m[32m  itemType: 1[m
+[1mdiff --git a/Assets/Prefabs/Items/HealthRegen.asset.meta b/Assets/Prefabs/Items/HealthRegen.asset.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f776a8e[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/HealthRegen.asset.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: a1fe7a26501abd946874958c18dafebb[m
+[32m+[m[32mNativeFormatImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  mainObjectFileID: 11400000[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/Items/KnockbackUp.asset b/Assets/Prefabs/Items/KnockbackUp.asset[m
+[1mnew file mode 100644[m
+[1mindex 0000000..021cc24[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/KnockbackUp.asset[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!114 &11400000[m
+[32m+[m[32mMonoBehaviour:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 0}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_EditorHideFlags: 0[m
+[32m+[m[32m  m_Script: {fileID: 11500000, guid: a547ae56f5ada2b4d9595885686a1a69, type: 3}[m
+[32m+[m[32m  m_Name: KnockbackUp[m
+[32m+[m[32m  m_EditorClassIdentifier: Assembly-CSharp::ItemData[m
+[32m+[m[32m  itemName: Knockback Up[m
+[32m+[m[32m  icon: {fileID: 21300000, guid: 1f2372553729c3e41aa1ae7ffb0d515b, type: 3}[m
+[32m+[m[32m  itemType: 7[m
+[1mdiff --git a/Assets/Prefabs/Items/KnockbackUp.asset.meta b/Assets/Prefabs/Items/KnockbackUp.asset.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4417287[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/KnockbackUp.asset.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: eacf75bd3b88d8543829108e1f8f1a73[m
+[32m+[m[32mNativeFormatImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  mainObjectFileID: 11400000[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/Items/MaxHealth.asset b/Assets/Prefabs/Items/MaxHealth.asset[m
+[1mnew file mode 100644[m
+[1mindex 0000000..db4438a[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/MaxHealth.asset[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!114 &11400000[m
+[32m+[m[32mMonoBehaviour:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 0}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_EditorHideFlags: 0[m
+[32m+[m[32m  m_Script: {fileID: 11500000, guid: a547ae56f5ada2b4d9595885686a1a69, type: 3}[m
+[32m+[m[32m  m_Name: MaxHealth[m
+[32m+[m[32m  m_EditorClassIdentifier: Assembly-CSharp::ItemData[m
+[32m+[m[32m  itemName: Max Health[m
+[32m+[m[32m  icon: {fileID: 21300000, guid: 814f11326ed546c4a9d9bd26020a333c, type: 3}[m
+[32m+[m[32m  itemType: 0[m
+[1mdiff --git a/Assets/Prefabs/Items/MaxHealth.asset.meta b/Assets/Prefabs/Items/MaxHealth.asset.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..23938b2[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/MaxHealth.asset.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: bb19a354ef5911243a5fd35289d7f96a[m
+[32m+[m[32mNativeFormatImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  mainObjectFileID: 11400000[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/Items/MaxShield.asset b/Assets/Prefabs/Items/MaxShield.asset[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ebcb12b[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/MaxShield.asset[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!114 &11400000[m
+[32m+[m[32mMonoBehaviour:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 0}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_EditorHideFlags: 0[m
+[32m+[m[32m  m_Script: {fileID: 11500000, guid: a547ae56f5ada2b4d9595885686a1a69, type: 3}[m
+[32m+[m[32m  m_Name: MaxShield[m
+[32m+[m[32m  m_EditorClassIdentifier: Assembly-CSharp::ItemData[m
+[32m+[m[32m  itemName: Max Shield[m
+[32m+[m[32m  icon: {fileID: 21300000, guid: a8ba38aad73f4e9459ad8e8b09b0ddfd, type: 3}[m
+[32m+[m[32m  itemType: 2[m
+[1mdiff --git a/Assets/Prefabs/Items/MaxShield.asset.meta b/Assets/Prefabs/Items/MaxShield.asset.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5d97fba[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/MaxShield.asset.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 57702cd8c51dec94698398b3ffb178c9[m
+[32m+[m[32mNativeFormatImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  mainObjectFileID: 11400000[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/Items/ShieldRegen.asset b/Assets/Prefabs/Items/ShieldRegen.asset[m
+[1mnew file mode 100644[m
+[1mindex 0000000..bdaebbb[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/ShieldRegen.asset[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m%YAML 1.1[m
+[32m+[m[32m%TAG !u! tag:unity3d.com,2011:[m
+[32m+[m[32m--- !u!114 &11400000[m
+[32m+[m[32mMonoBehaviour:[m
+[32m+[m[32m  m_ObjectHideFlags: 0[m
+[32m+[m[32m  m_CorrespondingSourceObject: {fileID: 0}[m
+[32m+[m[32m  m_PrefabInstance: {fileID: 0}[m
+[32m+[m[32m  m_PrefabAsset: {fileID: 0}[m
+[32m+[m[32m  m_GameObject: {fileID: 0}[m
+[32m+[m[32m  m_Enabled: 1[m
+[32m+[m[32m  m_EditorHideFlags: 0[m
+[32m+[m[32m  m_Script: {fileID: 11500000, guid: a547ae56f5ada2b4d9595885686a1a69, type: 3}[m
+[32m+[m[32m  m_Name: ShieldRegen[m
+[32m+[m[32m  m_EditorClassIdentifier: Assembly-CSharp::ItemData[m
+[32m+[m[32m  itemName: Shield Regen[m
+[32m+[m[32m  icon: {fileID: 21300000, guid: 39118e63f0673434281a4407c6ae407c, type: 3}[m
+[32m+[m[32m  itemType: 3[m
+[1mdiff --git a/Assets/Prefabs/Items/ShieldRegen.asset.meta b/Assets/Prefabs/Items/ShieldRegen.asset.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1883a37[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Prefabs/Items/ShieldRegen.asset.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 8071cbcde7d4d3c4985794d1263d0e90[m
+[32m+[m[32mNativeFormatImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  mainObjectFileID: 11400000[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/Prefabs/PickUps/XPDrop.prefab b/Assets/Prefabs/PickUps/XPDrop.prefab[m
+[1mindex 963b4ca..b4f7498 100644[m
+[1m--- a/Assets/Prefabs/PickUps/XPDrop.prefab[m
+[1m+++ b/Assets/Prefabs/PickUps/XPDrop.prefab[m
+[36m@@ -1552,7 +1552,7 @@[m [mMonoBehaviour:[m
+   m_Script: {fileID: 11500000, guid: bc8640438a7f7a743bf3f6aebf8802e2, type: 3}[m
+   m_Name: [m
+   m_EditorClassIdentifier: Assembly-CSharp::ExperienceOrb[m
+[31m-  experienceGained: 50[m
+[32m+[m[32m  experienceGained: 10[m
+ --- !u!114 &-7720073634662571303[m
+ MonoBehaviour:[m
+   m_ObjectHideFlags: 0[m
+[1mdiff --git a/Assets/Scenes/Level_01.unity b/Assets/Scenes/Level_01.unity[m
+[1mindex 682fa34..7681e62 100644[m
+[1m--- a/Assets/Scenes/Level_01.unity[m
+[1m+++ b/Assets/Scenes/Level_01.unity[m
+[36m@@ -1,3 +1,3 @@[m
+ version https://git-lfs.github.com/spec/v1[m
+[31m-oid sha256:a7c41ffbe601421f237a09d72cbce6144c0fcacb926f42ad7160318cbcd80a9f[m
+[31m-size 901217[m
+[32m+[m[32moid sha256:670c2ea97e9f694ba7ce85413467874975b7abc46dba78146dfec19dea6393b7[m
+[32m+[m[32msize 955195[m
+[1mdiff --git a/Assets/Scenes/Lobby.unity b/Assets/Scenes/Lobby.unity[m
+[1mindex d6ee908..cadfb85 100644[m
+[1m--- a/Assets/Scenes/Lobby.unity[m
+[1m+++ b/Assets/Scenes/Lobby.unity[m
+[36m@@ -1,3 +1,3 @@[m
+ version https://git-lfs.github.com/spec/v1[m
+[31m-oid sha256:68f17a73c566225dd60e279ef055b765c4fed5517f057fa07502969848ec0ba4[m
+[31m-size 236088[m
+[32m+[m[32moid sha256:cc24b505491f4b7bd2ba4f4f49cdb5d53a038df630acc839d6ea0d630c0cf38a[m
+[32m+[m[32msize 236096[m
+[1mdiff --git a/Assets/Scripts/Items/ItemData.cs b/Assets/Scripts/Items/ItemData.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8eed727[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Scripts/Items/ItemData.cs[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32musing UnityEngine;[m
+[32m+[m
+[32m+[m[32m// All items[m
+[32m+[m[32mpublic enum ItemType[m
+[32m+[m[32m{[m
+[32m+[m[32m    MaxHealth,[m
+[32m+[m[32m    HealthRegen,[m
+[32m+[m[32m    MaxShield,[m
+[32m+[m[32m    ShieldRegen,[m
+[32m+[m[32m    DamageUp,[m
+[32m+[m[32m    BurnDamage,[m
+[32m+[m[32m    FireRateUp,[m
+[32m+[m[32m    KnockBackUp[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m[CreateAssetMenu(menuName = "Items/Item Data")][m
+[32m+[m[32mpublic class ItemData : ScriptableObject[m
+[32m+[m[32m{[m
+[32m+[m[32m    public string itemName;[m
+[32m+[m[32m    public Sprite icon;[m
+[32m+[m[32m    public ItemType itemType;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Assets/Scripts/Items/ItemData.cs.meta b/Assets/Scripts/Items/ItemData.cs.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1ec7f3e[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Scripts/Items/ItemData.cs.meta[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: a547ae56f5ada2b4d9595885686a1a69[m
+\ No newline at end of file[m
+[1mdiff --git a/Assets/Scripts/Items/ItemDatabase.cs b/Assets/Scripts/Items/ItemDatabase.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..68a166e[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Scripts/Items/ItemDatabase.cs[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing UnityEngine;[m
+[32m+[m
+[32m+[m[32mpublic class ItemDatabase : MonoBehaviour[m
+[32m+[m[32m{[m
+[32m+[m[32m    public static ItemDatabase Instance;[m
+[32m+[m
+[32m+[m[32m    public List<ItemData> allItems = new List<ItemData>();[m
+[32m+[m
+[32m+[m[32m    private void Awake()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        if (Instance == null)[m
+[32m+[m[32m            Instance = this;[m
+[32m+[m[32m        else[m
+[32m+[m[32m            Destroy(gameObject);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Assets/Scripts/Items/ItemDatabase.cs.meta b/Assets/Scripts/Items/ItemDatabase.cs.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d68b1de[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Scripts/Items/ItemDatabase.cs.meta[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 3a11788911201da41be81158196e2ef7[m
+\ No newline at end of file[m
+[1mdiff --git a/Assets/Scripts/Items/LevelUpOption.cs b/Assets/Scripts/Items/LevelUpOption.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a520245[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Scripts/Items/LevelUpOption.cs[m
+[36m@@ -0,0 +1,26 @@[m
+[32m+[m[32musing TMPro;[m
+[32m+[m[32musing UnityEngine;[m
+[32m+[m[32musing UnityEngine.UI;[m
+[32m+[m
+[32m+[m[32mpublic class LevelUpOption : MonoBehaviour[m
+[32m+[m[32m{[m
+[32m+[m[32m    public TextMeshProUGUI nameText;[m
+[32m+[m[32m    public Image icon;[m
+[32m+[m
+[32m+[m[32m    private ItemData item;[m
+[32m+[m[32m    private LevelUpUI ui;[m
+[32m+[m
+[32m+[m[32m    public void Setup(ItemData data, LevelUpUI parent)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        item = data;[m
+[32m+[m[32m        ui = parent;[m
+[32m+[m
+[32m+[m[32m        nameText.text = data.itemName;[m
+[32m+[m[32m        icon.sprite = data.icon;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void OnClick()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        ui.SelectItem(item);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Assets/Scripts/Items/LevelUpOption.cs.meta b/Assets/Scripts/Items/LevelUpOption.cs.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..89e4e65[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Scripts/Items/LevelUpOption.cs.meta[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 0b83a257a594b414cafa9e635bd2f8b2[m
+\ No newline at end of file[m
+[1mdiff --git a/Assets/Scripts/Player/LevelUpUI.cs b/Assets/Scripts/Player/LevelUpUI.cs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b0755e4[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Scripts/Player/LevelUpUI.cs[m
+[36m@@ -0,0 +1,68 @@[m
+[32m+[m[32musing System.Collections.Generic;[m
+[32m+[m[32musing UnityEngine;[m
+[32m+[m
+[32m+[m[32mpublic class LevelUpUI : MonoBehaviour[m
+[32m+[m[32m{[m
+[32m+[m[32m    public static LevelUpUI Instance;[m
+[32m+[m
+[32m+[m[32m    public GameObject panel;[m
+[32m+[m[32m    public LevelUpOption[] optionButtons;[m
+[32m+[m
+[32m+[m[32m    private Player player;[m
+[32m+[m
+[32m+[m[32m    private void Awake()[m
+[32m+[m[32m    {[m
+[32m+[m[32m        // Debug[m
+[32m+[m[32m        Debug.LogError("LevelUpUI Awake FIRED");[m
+[32m+[m
+[32m+[m[32m        Instance = this;[m
+[32m+[m
+[32m+[m[32m        if (panel != null)[m
+[32m+[m[32m            panel.SetActive(false);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32mpublic void Show(Player p)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        player = p;[m
+[32m+[m[32m        Time.timeScale = 0f;[m
+[32m+[m[32m        panel.SetActive(true);[m
+[32m+[m
+[32m+[m[32m        // Cursor to select item[m
+[32m+[m[32m        Cursor.visible = true;[m
+[32m+[m[32m        Cursor.lockState = CursorLockMode.None;[m
+[32m+[m
+[32m+[m[32m        List<ItemData> options = GetRandomItems(3);[m
+[32m+[m
+[32m+[m[32m        for (int i = 0; i < optionButtons.Length; i++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            optionButtons[i].Setup(options[i], this);[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void SelectItem(ItemData data)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        player.AddItem(data);[m
+[32m+[m[32m        panel.SetActive(false);[m
+[32m+[m[32m        Time.timeScale = 1f;[m
+[32m+[m
+[32m+[m[32m        // Cursor to select item[m
+[32m+[m[32m        Cursor.visible = false;[m
+[32m+[m[32m        Cursor.lockState = CursorLockMode.Locked;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    List<ItemData> GetRandomItems(int count)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        List<ItemData> pool = new List<ItemData>(ItemDatabase.Instance.allItems);[m
+[32m+[m[32m        List<ItemData> result = new List<ItemData>();[m
+[32m+[m
+[32m+[m[32m        for (int i = 0; i < count; i++)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            int index = Random.Range(0, pool.Count);[m
+[32m+[m[32m            result.Add(pool[index]);[m
+[32m+[m[32m            pool.RemoveAt(index);[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        return result;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Assets/Scripts/Player/LevelUpUI.cs.meta b/Assets/Scripts/Player/LevelUpUI.cs.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..b9c90ef[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/Scripts/Player/LevelUpUI.cs.meta[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: a159b467642d1374c842973340745ee1[m
+\ No newline at end of file[m
+[1mdiff --git a/Assets/Scripts/Player/Player.cs b/Assets/Scripts/Player/Player.cs[m
+[1mindex cf9ecf8..077131a 100644[m
+[1m--- a/Assets/Scripts/Player/Player.cs[m
+[1m+++ b/Assets/Scripts/Player/Player.cs[m
+[36m@@ -34,6 +34,9 @@[m [mpublic class Player : MonoBehaviour[m
+     public int experienceCap;[m
+ [m
+     // Level / XP definition class[m
+[32m+[m[32m    public Slider levelSlider;[m
+[32m+[m[32m    public TextMeshProUGUI levelText;[m[41m [m
+[32m+[m
+     [System.Serializable][m
+     public class LevelRange[m
+     {[m
+[36m@@ -75,9 +78,6 @@[m [mpublic class Player : MonoBehaviour[m
+ [m
+         UpdateUI();[m
+ [m
+[31m-        // Item test[m
+[31m-        BurnDamage item = new BurnDamage();[m
+[31m-        items.Add(new ItemList(item, item.GiveName(), 2));[m
+ [m
+         // Start item loop[m
+         StartCoroutine(CallItemUpdate());[m
+[36m@@ -111,10 +111,18 @@[m [mpublic class Player : MonoBehaviour[m
+         experience += amount;[m
+ [m
+         LevelUpChecker();[m
+[32m+[m[32m        UpdateUI();[m
+     }[m
+ [m
+     void LevelUpChecker()[m
+     {[m
+[32m+[m[32m        // Debug[m
+[32m+[m[32m        if (LevelUpUI.Instance == null)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            Debug.LogError("LevelUpUI.Instance is NULL – is LevelUpUI in the scene?");[m
+[32m+[m[32m            return;[m
+[32m+[m[32m        }[m
+[32m+[m
+         if (experience >= experienceCap)[m
+         {[m
+             level++;[m
+[36m@@ -132,10 +140,42 @@[m [mpublic class Player : MonoBehaviour[m
+             }[m
+ [m
+             experienceCap += experienceCapIncrease;[m
+[32m+[m
+[32m+[m[32m            // Trigger level-up selection[m
+[32m+[m[32m            LevelUpUI.Instance.Show(this);[m
+         } [m
+     }[m
+ [m
+     // Items[m
+[32m+[m[32m    public void AddItem(ItemData data)[m
+[32m+[m[32m    {[m
+[32m+[m[32m        ItemList existing = items.Find(i => i.name == data.itemName);[m
+[32m+[m
+[32m+[m[32m        if (existing != null)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            existing.stacks++;[m
+[32m+[m[32m            existing.item.OnStacksChanged(this, existing.stacks);[m
+[32m+[m[32m            return;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        Items newItem = data.itemType switch[m
+[32m+[m[32m        {[m
+[32m+[m[32m            ItemType.MaxHealth => new MaxHealth(),[m
+[32m+[m[32m            ItemType.HealthRegen => new HealthRegen(),[m
+[32m+[m[32m            ItemType.MaxShield => new MaxShield(),[m
+[32m+[m[32m            ItemType.ShieldRegen => new ShieldRegen(),[m
+[32m+[m[32m            ItemType.DamageUp => new DamageUp(),[m
+[32m+[m[32m            ItemType.BurnDamage => new BurnDamage(),[m
+[32m+[m[32m            ItemType.FireRateUp => new FireRateUp(),[m
+[32m+[m[32m            ItemType.KnockBackUp => new KnockBackUp(),[m
+[32m+[m[32m            _ => null[m
+[32m+[m[32m        };[m
+[32m+[m
+[32m+[m[32m        if (newItem != null)[m
+[32m+[m[32m            items.Add(new ItemList(newItem, data.itemName, 1));[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+     IEnumerator CallItemUpdate()[m
+     {[m
+         // Stop updating items if dead[m
+[36m@@ -286,6 +326,20 @@[m [mpublic class Player : MonoBehaviour[m
+ [m
+     private void UpdateUI()[m
+     {[m
+[32m+[m[32m        // Level/XP bar[m
+[32m+[m[32m        float xpForCurrentLevel = experience;[m[41m [m
+[32m+[m[32m        float xpForNextLevel = experienceCap;[m
+[32m+[m
+[32m+[m[32m        if (levelSlider != null)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            levelSlider.value = xpForCurrentLevel / xpForNextLevel;[m
+[32m+[m[32m        }[m
+[32m+[m
+[32m+[m[32m        if (levelText != null)[m
+[32m+[m[32m        {[m
+[32m+[m[32m            levelText.text = $" Level: {level}  ( {experience} / {experienceCap} XP )";[m
+[32m+[m[32m        }[m
+[32m+[m
+         // Update sliders[m
+         healthBar.SetMaxHealth(maxHealth);[m
+         healthBar.SetHealth(currentHealth);[m
+[1mdiff --git a/Assets/SourceImages/Items.meta b/Assets/SourceImages/Items.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..21d9dce[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items.meta[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 9dbe632d0b257f14cb5df6e40be2edd4[m
+[32m+[m[32mfolderAsset: yes[m
+[32m+[m[32mDefaultImporter:[m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/SourceImages/Items/DamageUp.png b/Assets/SourceImages/Items/DamageUp.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..31a6697[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/DamageUp.png[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mversion https://git-lfs.github.com/spec/v1[m
+[32m+[m[32moid sha256:2e526f4f3ae2bc586db930f0d47b12a028ea5e015eceb0f5262cf9bc6ebb6f8d[m
+[32m+[m[32msize 789696[m
+[1mdiff --git a/Assets/SourceImages/Items/DamageUp.png.meta b/Assets/SourceImages/Items/DamageUp.png.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a1ce20f[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/DamageUp.png.meta[m
+[36m@@ -0,0 +1,117 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: ea831c068dece3a45b62774216747d33[m
+[32m+[m[32mTextureImporter:[m
+[32m+[m[32m  internalIDToNameTable: [][m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  serializedVersion: 13[m
+[32m+[m[32m  mipmaps:[m
+[32m+[m[32m    mipMapMode: 0[m
+[32m+[m[32m    enableMipMap: 0[m
+[32m+[m[32m    sRGBTexture: 1[m
+[32m+[m[32m    linearTexture: 0[m
+[32m+[m[32m    fadeOut: 0[m
+[32m+[m[32m    borderMipMap: 0[m
+[32m+[m[32m    mipMapsPreserveCoverage: 0[m
+[32m+[m[32m    alphaTestReferenceValue: 0.5[m
+[32m+[m[32m    mipMapFadeDistanceStart: 1[m
+[32m+[m[32m    mipMapFadeDistanceEnd: 3[m
+[32m+[m[32m  bumpmap:[m
+[32m+[m[32m    convertToNormalMap: 0[m
+[32m+[m[32m    externalNormalMap: 0[m
+[32m+[m[32m    heightScale: 0.25[m
+[32m+[m[32m    normalMapFilter: 0[m
+[32m+[m[32m    flipGreenChannel: 0[m
+[32m+[m[32m  isReadable: 0[m
+[32m+[m[32m  streamingMipmaps: 0[m
+[32m+[m[32m  streamingMipmapsPriority: 0[m
+[32m+[m[32m  vTOnly: 0[m
+[32m+[m[32m  ignoreMipmapLimit: 0[m
+[32m+[m[32m  grayScaleToAlpha: 0[m
+[32m+[m[32m  generateCubemap: 6[m
+[32m+[m[32m  cubemapConvolution: 0[m
+[32m+[m[32m  seamlessCubemap: 0[m
+[32m+[m[32m  textureFormat: 1[m
+[32m+[m[32m  maxTextureSize: 2048[m
+[32m+[m[32m  textureSettings:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    filterMode: 1[m
+[32m+[m[32m    aniso: 1[m
+[32m+[m[32m    mipBias: 0[m
+[32m+[m[32m    wrapU: 1[m
+[32m+[m[32m    wrapV: 1[m
+[32m+[m[32m    wrapW: 0[m
+[32m+[m[32m  nPOTScale: 0[m
+[32m+[m[32m  lightmap: 0[m
+[32m+[m[32m  compressionQuality: 50[m
+[32m+[m[32m  spriteMode: 1[m
+[32m+[m[32m  spriteExtrude: 1[m
+[32m+[m[32m  spriteMeshType: 1[m
+[32m+[m[32m  alignment: 0[m
+[32m+[m[32m  spritePivot: {x: 0.5, y: 0.5}[m
+[32m+[m[32m  spritePixelsToUnits: 100[m
+[32m+[m[32m  spriteBorder: {x: 0, y: 0, z: 0, w: 0}[m
+[32m+[m[32m  spriteGenerateFallbackPhysicsShape: 1[m
+[32m+[m[32m  alphaUsage: 1[m
+[32m+[m[32m  alphaIsTransparency: 1[m
+[32m+[m[32m  spriteTessellationDetail: -1[m
+[32m+[m[32m  textureType: 8[m
+[32m+[m[32m  textureShape: 1[m
+[32m+[m[32m  singleChannelComponent: 0[m
+[32m+[m[32m  flipbookRows: 1[m
+[32m+[m[32m  flipbookColumns: 1[m
+[32m+[m[32m  maxTextureSizeSet: 0[m
+[32m+[m[32m  compressionQualitySet: 0[m
+[32m+[m[32m  textureFormatSet: 0[m
+[32m+[m[32m  ignorePngGamma: 0[m
+[32m+[m[32m  applyGammaDecoding: 0[m
+[32m+[m[32m  swizzle: 50462976[m
+[32m+[m[32m  cookieLightType: 0[m
+[32m+[m[32m  platformSettings:[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: DefaultTexturePlatform[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: Standalone[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  spriteSheet:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    sprites: [][m
+[32m+[m[32m    outline: [][m
+[32m+[m[32m    customData:[m[41m [m
+[32m+[m[32m    physicsShape: [][m
+[32m+[m[32m    bones: [][m
+[32m+[m[32m    spriteID: 5e97eb03825dee720800000000000000[m
+[32m+[m[32m    internalID: 0[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    indices:[m[41m [m
+[32m+[m[32m    edges: [][m
+[32m+[m[32m    weights: [][m
+[32m+[m[32m    secondaryTextures: [][m
+[32m+[m[32m    spriteCustomMetadata:[m
+[32m+[m[32m      entries: [][m
+[32m+[m[32m    nameFileIdTable: {}[m
+[32m+[m[32m  mipmapLimitGroupName:[m[41m [m
+[32m+[m[32m  pSDRemoveMatte: 0[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/SourceImages/Items/FireDamage.png b/Assets/SourceImages/Items/FireDamage.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..72d761f[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/FireDamage.png[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mversion https://git-lfs.github.com/spec/v1[m
+[32m+[m[32moid sha256:ca632909e0f895ac032166404842a9bdc163bfa3e9e946f1651bd51e814fa939[m
+[32m+[m[32msize 759859[m
+[1mdiff --git a/Assets/SourceImages/Items/FireDamage.png.meta b/Assets/SourceImages/Items/FireDamage.png.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a727f0e[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/FireDamage.png.meta[m
+[36m@@ -0,0 +1,117 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 845922c59e9269347908f0cc58b29e57[m
+[32m+[m[32mTextureImporter:[m
+[32m+[m[32m  internalIDToNameTable: [][m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  serializedVersion: 13[m
+[32m+[m[32m  mipmaps:[m
+[32m+[m[32m    mipMapMode: 0[m
+[32m+[m[32m    enableMipMap: 0[m
+[32m+[m[32m    sRGBTexture: 1[m
+[32m+[m[32m    linearTexture: 0[m
+[32m+[m[32m    fadeOut: 0[m
+[32m+[m[32m    borderMipMap: 0[m
+[32m+[m[32m    mipMapsPreserveCoverage: 0[m
+[32m+[m[32m    alphaTestReferenceValue: 0.5[m
+[32m+[m[32m    mipMapFadeDistanceStart: 1[m
+[32m+[m[32m    mipMapFadeDistanceEnd: 3[m
+[32m+[m[32m  bumpmap:[m
+[32m+[m[32m    convertToNormalMap: 0[m
+[32m+[m[32m    externalNormalMap: 0[m
+[32m+[m[32m    heightScale: 0.25[m
+[32m+[m[32m    normalMapFilter: 0[m
+[32m+[m[32m    flipGreenChannel: 0[m
+[32m+[m[32m  isReadable: 0[m
+[32m+[m[32m  streamingMipmaps: 0[m
+[32m+[m[32m  streamingMipmapsPriority: 0[m
+[32m+[m[32m  vTOnly: 0[m
+[32m+[m[32m  ignoreMipmapLimit: 0[m
+[32m+[m[32m  grayScaleToAlpha: 0[m
+[32m+[m[32m  generateCubemap: 6[m
+[32m+[m[32m  cubemapConvolution: 0[m
+[32m+[m[32m  seamlessCubemap: 0[m
+[32m+[m[32m  textureFormat: 1[m
+[32m+[m[32m  maxTextureSize: 2048[m
+[32m+[m[32m  textureSettings:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    filterMode: 1[m
+[32m+[m[32m    aniso: 1[m
+[32m+[m[32m    mipBias: 0[m
+[32m+[m[32m    wrapU: 1[m
+[32m+[m[32m    wrapV: 1[m
+[32m+[m[32m    wrapW: 0[m
+[32m+[m[32m  nPOTScale: 0[m
+[32m+[m[32m  lightmap: 0[m
+[32m+[m[32m  compressionQuality: 50[m
+[32m+[m[32m  spriteMode: 1[m
+[32m+[m[32m  spriteExtrude: 1[m
+[32m+[m[32m  spriteMeshType: 1[m
+[32m+[m[32m  alignment: 0[m
+[32m+[m[32m  spritePivot: {x: 0.5, y: 0.5}[m
+[32m+[m[32m  spritePixelsToUnits: 100[m
+[32m+[m[32m  spriteBorder: {x: 0, y: 0, z: 0, w: 0}[m
+[32m+[m[32m  spriteGenerateFallbackPhysicsShape: 1[m
+[32m+[m[32m  alphaUsage: 1[m
+[32m+[m[32m  alphaIsTransparency: 1[m
+[32m+[m[32m  spriteTessellationDetail: -1[m
+[32m+[m[32m  textureType: 8[m
+[32m+[m[32m  textureShape: 1[m
+[32m+[m[32m  singleChannelComponent: 0[m
+[32m+[m[32m  flipbookRows: 1[m
+[32m+[m[32m  flipbookColumns: 1[m
+[32m+[m[32m  maxTextureSizeSet: 0[m
+[32m+[m[32m  compressionQualitySet: 0[m
+[32m+[m[32m  textureFormatSet: 0[m
+[32m+[m[32m  ignorePngGamma: 0[m
+[32m+[m[32m  applyGammaDecoding: 0[m
+[32m+[m[32m  swizzle: 50462976[m
+[32m+[m[32m  cookieLightType: 0[m
+[32m+[m[32m  platformSettings:[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: DefaultTexturePlatform[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: Standalone[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  spriteSheet:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    sprites: [][m
+[32m+[m[32m    outline: [][m
+[32m+[m[32m    customData:[m[41m [m
+[32m+[m[32m    physicsShape: [][m
+[32m+[m[32m    bones: [][m
+[32m+[m[32m    spriteID: 5e97eb03825dee720800000000000000[m
+[32m+[m[32m    internalID: 0[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    indices:[m[41m [m
+[32m+[m[32m    edges: [][m
+[32m+[m[32m    weights: [][m
+[32m+[m[32m    secondaryTextures: [][m
+[32m+[m[32m    spriteCustomMetadata:[m
+[32m+[m[32m      entries: [][m
+[32m+[m[32m    nameFileIdTable: {}[m
+[32m+[m[32m  mipmapLimitGroupName:[m[41m [m
+[32m+[m[32m  pSDRemoveMatte: 0[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/SourceImages/Items/FireRateUp.png b/Assets/SourceImages/Items/FireRateUp.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..82ca34d[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/FireRateUp.png[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mversion https://git-lfs.github.com/spec/v1[m
+[32m+[m[32moid sha256:b01016dbeeaf2474206e14702e68b24a51f75975ce210f08af8bb66d4c6e1872[m
+[32m+[m[32msize 773605[m
+[1mdiff --git a/Assets/SourceImages/Items/FireRateUp.png.meta b/Assets/SourceImages/Items/FireRateUp.png.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4f37895[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/FireRateUp.png.meta[m
+[36m@@ -0,0 +1,117 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: fc60e4f835437e94584f28206969d97d[m
+[32m+[m[32mTextureImporter:[m
+[32m+[m[32m  internalIDToNameTable: [][m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  serializedVersion: 13[m
+[32m+[m[32m  mipmaps:[m
+[32m+[m[32m    mipMapMode: 0[m
+[32m+[m[32m    enableMipMap: 0[m
+[32m+[m[32m    sRGBTexture: 1[m
+[32m+[m[32m    linearTexture: 0[m
+[32m+[m[32m    fadeOut: 0[m
+[32m+[m[32m    borderMipMap: 0[m
+[32m+[m[32m    mipMapsPreserveCoverage: 0[m
+[32m+[m[32m    alphaTestReferenceValue: 0.5[m
+[32m+[m[32m    mipMapFadeDistanceStart: 1[m
+[32m+[m[32m    mipMapFadeDistanceEnd: 3[m
+[32m+[m[32m  bumpmap:[m
+[32m+[m[32m    convertToNormalMap: 0[m
+[32m+[m[32m    externalNormalMap: 0[m
+[32m+[m[32m    heightScale: 0.25[m
+[32m+[m[32m    normalMapFilter: 0[m
+[32m+[m[32m    flipGreenChannel: 0[m
+[32m+[m[32m  isReadable: 0[m
+[32m+[m[32m  streamingMipmaps: 0[m
+[32m+[m[32m  streamingMipmapsPriority: 0[m
+[32m+[m[32m  vTOnly: 0[m
+[32m+[m[32m  ignoreMipmapLimit: 0[m
+[32m+[m[32m  grayScaleToAlpha: 0[m
+[32m+[m[32m  generateCubemap: 6[m
+[32m+[m[32m  cubemapConvolution: 0[m
+[32m+[m[32m  seamlessCubemap: 0[m
+[32m+[m[32m  textureFormat: 1[m
+[32m+[m[32m  maxTextureSize: 2048[m
+[32m+[m[32m  textureSettings:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    filterMode: 1[m
+[32m+[m[32m    aniso: 1[m
+[32m+[m[32m    mipBias: 0[m
+[32m+[m[32m    wrapU: 1[m
+[32m+[m[32m    wrapV: 1[m
+[32m+[m[32m    wrapW: 0[m
+[32m+[m[32m  nPOTScale: 0[m
+[32m+[m[32m  lightmap: 0[m
+[32m+[m[32m  compressionQuality: 50[m
+[32m+[m[32m  spriteMode: 1[m
+[32m+[m[32m  spriteExtrude: 1[m
+[32m+[m[32m  spriteMeshType: 1[m
+[32m+[m[32m  alignment: 0[m
+[32m+[m[32m  spritePivot: {x: 0.5, y: 0.5}[m
+[32m+[m[32m  spritePixelsToUnits: 100[m
+[32m+[m[32m  spriteBorder: {x: 0, y: 0, z: 0, w: 0}[m
+[32m+[m[32m  spriteGenerateFallbackPhysicsShape: 1[m
+[32m+[m[32m  alphaUsage: 1[m
+[32m+[m[32m  alphaIsTransparency: 1[m
+[32m+[m[32m  spriteTessellationDetail: -1[m
+[32m+[m[32m  textureType: 8[m
+[32m+[m[32m  textureShape: 1[m
+[32m+[m[32m  singleChannelComponent: 0[m
+[32m+[m[32m  flipbookRows: 1[m
+[32m+[m[32m  flipbookColumns: 1[m
+[32m+[m[32m  maxTextureSizeSet: 0[m
+[32m+[m[32m  compressionQualitySet: 0[m
+[32m+[m[32m  textureFormatSet: 0[m
+[32m+[m[32m  ignorePngGamma: 0[m
+[32m+[m[32m  applyGammaDecoding: 0[m
+[32m+[m[32m  swizzle: 50462976[m
+[32m+[m[32m  cookieLightType: 0[m
+[32m+[m[32m  platformSettings:[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: DefaultTexturePlatform[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: Standalone[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  spriteSheet:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    sprites: [][m
+[32m+[m[32m    outline: [][m
+[32m+[m[32m    customData:[m[41m [m
+[32m+[m[32m    physicsShape: [][m
+[32m+[m[32m    bones: [][m
+[32m+[m[32m    spriteID: 5e97eb03825dee720800000000000000[m
+[32m+[m[32m    internalID: 0[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    indices:[m[41m [m
+[32m+[m[32m    edges: [][m
+[32m+[m[32m    weights: [][m
+[32m+[m[32m    secondaryTextures: [][m
+[32m+[m[32m    spriteCustomMetadata:[m
+[32m+[m[32m      entries: [][m
+[32m+[m[32m    nameFileIdTable: {}[m
+[32m+[m[32m  mipmapLimitGroupName:[m[41m [m
+[32m+[m[32m  pSDRemoveMatte: 0[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/SourceImages/Items/HealthRegen.png b/Assets/SourceImages/Items/HealthRegen.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d50467e[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/HealthRegen.png[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mversion https://git-lfs.github.com/spec/v1[m
+[32m+[m[32moid sha256:e217985c665d7047161e247cbf8199d245624ae733eb03a5eedb45d0fdc3f42b[m
+[32m+[m[32msize 723897[m
+[1mdiff --git a/Assets/SourceImages/Items/HealthRegen.png.meta b/Assets/SourceImages/Items/HealthRegen.png.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..30a3dd5[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/HealthRegen.png.meta[m
+[36m@@ -0,0 +1,117 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: b928f4bd03f2505449c827d4f744a166[m
+[32m+[m[32mTextureImporter:[m
+[32m+[m[32m  internalIDToNameTable: [][m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  serializedVersion: 13[m
+[32m+[m[32m  mipmaps:[m
+[32m+[m[32m    mipMapMode: 0[m
+[32m+[m[32m    enableMipMap: 0[m
+[32m+[m[32m    sRGBTexture: 1[m
+[32m+[m[32m    linearTexture: 0[m
+[32m+[m[32m    fadeOut: 0[m
+[32m+[m[32m    borderMipMap: 0[m
+[32m+[m[32m    mipMapsPreserveCoverage: 0[m
+[32m+[m[32m    alphaTestReferenceValue: 0.5[m
+[32m+[m[32m    mipMapFadeDistanceStart: 1[m
+[32m+[m[32m    mipMapFadeDistanceEnd: 3[m
+[32m+[m[32m  bumpmap:[m
+[32m+[m[32m    convertToNormalMap: 0[m
+[32m+[m[32m    externalNormalMap: 0[m
+[32m+[m[32m    heightScale: 0.25[m
+[32m+[m[32m    normalMapFilter: 0[m
+[32m+[m[32m    flipGreenChannel: 0[m
+[32m+[m[32m  isReadable: 0[m
+[32m+[m[32m  streamingMipmaps: 0[m
+[32m+[m[32m  streamingMipmapsPriority: 0[m
+[32m+[m[32m  vTOnly: 0[m
+[32m+[m[32m  ignoreMipmapLimit: 0[m
+[32m+[m[32m  grayScaleToAlpha: 0[m
+[32m+[m[32m  generateCubemap: 6[m
+[32m+[m[32m  cubemapConvolution: 0[m
+[32m+[m[32m  seamlessCubemap: 0[m
+[32m+[m[32m  textureFormat: 1[m
+[32m+[m[32m  maxTextureSize: 2048[m
+[32m+[m[32m  textureSettings:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    filterMode: 1[m
+[32m+[m[32m    aniso: 1[m
+[32m+[m[32m    mipBias: 0[m
+[32m+[m[32m    wrapU: 1[m
+[32m+[m[32m    wrapV: 1[m
+[32m+[m[32m    wrapW: 0[m
+[32m+[m[32m  nPOTScale: 0[m
+[32m+[m[32m  lightmap: 0[m
+[32m+[m[32m  compressionQuality: 50[m
+[32m+[m[32m  spriteMode: 1[m
+[32m+[m[32m  spriteExtrude: 1[m
+[32m+[m[32m  spriteMeshType: 1[m
+[32m+[m[32m  alignment: 0[m
+[32m+[m[32m  spritePivot: {x: 0.5, y: 0.5}[m
+[32m+[m[32m  spritePixelsToUnits: 100[m
+[32m+[m[32m  spriteBorder: {x: 0, y: 0, z: 0, w: 0}[m
+[32m+[m[32m  spriteGenerateFallbackPhysicsShape: 1[m
+[32m+[m[32m  alphaUsage: 1[m
+[32m+[m[32m  alphaIsTransparency: 1[m
+[32m+[m[32m  spriteTessellationDetail: -1[m
+[32m+[m[32m  textureType: 8[m
+[32m+[m[32m  textureShape: 1[m
+[32m+[m[32m  singleChannelComponent: 0[m
+[32m+[m[32m  flipbookRows: 1[m
+[32m+[m[32m  flipbookColumns: 1[m
+[32m+[m[32m  maxTextureSizeSet: 0[m
+[32m+[m[32m  compressionQualitySet: 0[m
+[32m+[m[32m  textureFormatSet: 0[m
+[32m+[m[32m  ignorePngGamma: 0[m
+[32m+[m[32m  applyGammaDecoding: 0[m
+[32m+[m[32m  swizzle: 50462976[m
+[32m+[m[32m  cookieLightType: 0[m
+[32m+[m[32m  platformSettings:[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: DefaultTexturePlatform[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: Standalone[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  spriteSheet:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    sprites: [][m
+[32m+[m[32m    outline: [][m
+[32m+[m[32m    customData:[m[41m [m
+[32m+[m[32m    physicsShape: [][m
+[32m+[m[32m    bones: [][m
+[32m+[m[32m    spriteID: 5e97eb03825dee720800000000000000[m
+[32m+[m[32m    internalID: 0[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    indices:[m[41m [m
+[32m+[m[32m    edges: [][m
+[32m+[m[32m    weights: [][m
+[32m+[m[32m    secondaryTextures: [][m
+[32m+[m[32m    spriteCustomMetadata:[m
+[32m+[m[32m      entries: [][m
+[32m+[m[32m    nameFileIdTable: {}[m
+[32m+[m[32m  mipmapLimitGroupName:[m[41m [m
+[32m+[m[32m  pSDRemoveMatte: 0[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/SourceImages/Items/KnockbackUp.png b/Assets/SourceImages/Items/KnockbackUp.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..00931dc[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/KnockbackUp.png[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mversion https://git-lfs.github.com/spec/v1[m
+[32m+[m[32moid sha256:dec44154ffeea2aa1b80d279b06f80ac7ad98515fbd05d7ea5363b7d12370001[m
+[32m+[m[32msize 772519[m
+[1mdiff --git a/Assets/SourceImages/Items/KnockbackUp.png.meta b/Assets/SourceImages/Items/KnockbackUp.png.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..3a81387[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/KnockbackUp.png.meta[m
+[36m@@ -0,0 +1,117 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 1f2372553729c3e41aa1ae7ffb0d515b[m
+[32m+[m[32mTextureImporter:[m
+[32m+[m[32m  internalIDToNameTable: [][m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  serializedVersion: 13[m
+[32m+[m[32m  mipmaps:[m
+[32m+[m[32m    mipMapMode: 0[m
+[32m+[m[32m    enableMipMap: 0[m
+[32m+[m[32m    sRGBTexture: 1[m
+[32m+[m[32m    linearTexture: 0[m
+[32m+[m[32m    fadeOut: 0[m
+[32m+[m[32m    borderMipMap: 0[m
+[32m+[m[32m    mipMapsPreserveCoverage: 0[m
+[32m+[m[32m    alphaTestReferenceValue: 0.5[m
+[32m+[m[32m    mipMapFadeDistanceStart: 1[m
+[32m+[m[32m    mipMapFadeDistanceEnd: 3[m
+[32m+[m[32m  bumpmap:[m
+[32m+[m[32m    convertToNormalMap: 0[m
+[32m+[m[32m    externalNormalMap: 0[m
+[32m+[m[32m    heightScale: 0.25[m
+[32m+[m[32m    normalMapFilter: 0[m
+[32m+[m[32m    flipGreenChannel: 0[m
+[32m+[m[32m  isReadable: 0[m
+[32m+[m[32m  streamingMipmaps: 0[m
+[32m+[m[32m  streamingMipmapsPriority: 0[m
+[32m+[m[32m  vTOnly: 0[m
+[32m+[m[32m  ignoreMipmapLimit: 0[m
+[32m+[m[32m  grayScaleToAlpha: 0[m
+[32m+[m[32m  generateCubemap: 6[m
+[32m+[m[32m  cubemapConvolution: 0[m
+[32m+[m[32m  seamlessCubemap: 0[m
+[32m+[m[32m  textureFormat: 1[m
+[32m+[m[32m  maxTextureSize: 2048[m
+[32m+[m[32m  textureSettings:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    filterMode: 1[m
+[32m+[m[32m    aniso: 1[m
+[32m+[m[32m    mipBias: 0[m
+[32m+[m[32m    wrapU: 1[m
+[32m+[m[32m    wrapV: 1[m
+[32m+[m[32m    wrapW: 0[m
+[32m+[m[32m  nPOTScale: 0[m
+[32m+[m[32m  lightmap: 0[m
+[32m+[m[32m  compressionQuality: 50[m
+[32m+[m[32m  spriteMode: 1[m
+[32m+[m[32m  spriteExtrude: 1[m
+[32m+[m[32m  spriteMeshType: 1[m
+[32m+[m[32m  alignment: 0[m
+[32m+[m[32m  spritePivot: {x: 0.5, y: 0.5}[m
+[32m+[m[32m  spritePixelsToUnits: 100[m
+[32m+[m[32m  spriteBorder: {x: 0, y: 0, z: 0, w: 0}[m
+[32m+[m[32m  spriteGenerateFallbackPhysicsShape: 1[m
+[32m+[m[32m  alphaUsage: 1[m
+[32m+[m[32m  alphaIsTransparency: 1[m
+[32m+[m[32m  spriteTessellationDetail: -1[m
+[32m+[m[32m  textureType: 8[m
+[32m+[m[32m  textureShape: 1[m
+[32m+[m[32m  singleChannelComponent: 0[m
+[32m+[m[32m  flipbookRows: 1[m
+[32m+[m[32m  flipbookColumns: 1[m
+[32m+[m[32m  maxTextureSizeSet: 0[m
+[32m+[m[32m  compressionQualitySet: 0[m
+[32m+[m[32m  textureFormatSet: 0[m
+[32m+[m[32m  ignorePngGamma: 0[m
+[32m+[m[32m  applyGammaDecoding: 0[m
+[32m+[m[32m  swizzle: 50462976[m
+[32m+[m[32m  cookieLightType: 0[m
+[32m+[m[32m  platformSettings:[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: DefaultTexturePlatform[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: Standalone[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  spriteSheet:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    sprites: [][m
+[32m+[m[32m    outline: [][m
+[32m+[m[32m    customData:[m[41m [m
+[32m+[m[32m    physicsShape: [][m
+[32m+[m[32m    bones: [][m
+[32m+[m[32m    spriteID: 5e97eb03825dee720800000000000000[m
+[32m+[m[32m    internalID: 0[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    indices:[m[41m [m
+[32m+[m[32m    edges: [][m
+[32m+[m[32m    weights: [][m
+[32m+[m[32m    secondaryTextures: [][m
+[32m+[m[32m    spriteCustomMetadata:[m
+[32m+[m[32m      entries: [][m
+[32m+[m[32m    nameFileIdTable: {}[m
+[32m+[m[32m  mipmapLimitGroupName:[m[41m [m
+[32m+[m[32m  pSDRemoveMatte: 0[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/SourceImages/Items/MaxHealth.png b/Assets/SourceImages/Items/MaxHealth.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..d612cd4[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/MaxHealth.png[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mversion https://git-lfs.github.com/spec/v1[m
+[32m+[m[32moid sha256:5017066ff4659efe09e59e921a1d40adfe1eaa212eaf874accd65c16171b7d25[m
+[32m+[m[32msize 698617[m
+[1mdiff --git a/Assets/SourceImages/Items/MaxHealth.png.meta b/Assets/SourceImages/Items/MaxHealth.png.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5339468[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/MaxHealth.png.meta[m
+[36m@@ -0,0 +1,117 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 814f11326ed546c4a9d9bd26020a333c[m
+[32m+[m[32mTextureImporter:[m
+[32m+[m[32m  internalIDToNameTable: [][m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  serializedVersion: 13[m
+[32m+[m[32m  mipmaps:[m
+[32m+[m[32m    mipMapMode: 0[m
+[32m+[m[32m    enableMipMap: 0[m
+[32m+[m[32m    sRGBTexture: 1[m
+[32m+[m[32m    linearTexture: 0[m
+[32m+[m[32m    fadeOut: 0[m
+[32m+[m[32m    borderMipMap: 0[m
+[32m+[m[32m    mipMapsPreserveCoverage: 0[m
+[32m+[m[32m    alphaTestReferenceValue: 0.5[m
+[32m+[m[32m    mipMapFadeDistanceStart: 1[m
+[32m+[m[32m    mipMapFadeDistanceEnd: 3[m
+[32m+[m[32m  bumpmap:[m
+[32m+[m[32m    convertToNormalMap: 0[m
+[32m+[m[32m    externalNormalMap: 0[m
+[32m+[m[32m    heightScale: 0.25[m
+[32m+[m[32m    normalMapFilter: 0[m
+[32m+[m[32m    flipGreenChannel: 0[m
+[32m+[m[32m  isReadable: 0[m
+[32m+[m[32m  streamingMipmaps: 0[m
+[32m+[m[32m  streamingMipmapsPriority: 0[m
+[32m+[m[32m  vTOnly: 0[m
+[32m+[m[32m  ignoreMipmapLimit: 0[m
+[32m+[m[32m  grayScaleToAlpha: 0[m
+[32m+[m[32m  generateCubemap: 6[m
+[32m+[m[32m  cubemapConvolution: 0[m
+[32m+[m[32m  seamlessCubemap: 0[m
+[32m+[m[32m  textureFormat: 1[m
+[32m+[m[32m  maxTextureSize: 2048[m
+[32m+[m[32m  textureSettings:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    filterMode: 1[m
+[32m+[m[32m    aniso: 1[m
+[32m+[m[32m    mipBias: 0[m
+[32m+[m[32m    wrapU: 1[m
+[32m+[m[32m    wrapV: 1[m
+[32m+[m[32m    wrapW: 0[m
+[32m+[m[32m  nPOTScale: 0[m
+[32m+[m[32m  lightmap: 0[m
+[32m+[m[32m  compressionQuality: 50[m
+[32m+[m[32m  spriteMode: 1[m
+[32m+[m[32m  spriteExtrude: 1[m
+[32m+[m[32m  spriteMeshType: 1[m
+[32m+[m[32m  alignment: 0[m
+[32m+[m[32m  spritePivot: {x: 0.5, y: 0.5}[m
+[32m+[m[32m  spritePixelsToUnits: 100[m
+[32m+[m[32m  spriteBorder: {x: 0, y: 0, z: 0, w: 0}[m
+[32m+[m[32m  spriteGenerateFallbackPhysicsShape: 1[m
+[32m+[m[32m  alphaUsage: 1[m
+[32m+[m[32m  alphaIsTransparency: 1[m
+[32m+[m[32m  spriteTessellationDetail: -1[m
+[32m+[m[32m  textureType: 8[m
+[32m+[m[32m  textureShape: 1[m
+[32m+[m[32m  singleChannelComponent: 0[m
+[32m+[m[32m  flipbookRows: 1[m
+[32m+[m[32m  flipbookColumns: 1[m
+[32m+[m[32m  maxTextureSizeSet: 0[m
+[32m+[m[32m  compressionQualitySet: 0[m
+[32m+[m[32m  textureFormatSet: 0[m
+[32m+[m[32m  ignorePngGamma: 0[m
+[32m+[m[32m  applyGammaDecoding: 0[m
+[32m+[m[32m  swizzle: 50462976[m
+[32m+[m[32m  cookieLightType: 0[m
+[32m+[m[32m  platformSettings:[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: DefaultTexturePlatform[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: Standalone[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  spriteSheet:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    sprites: [][m
+[32m+[m[32m    outline: [][m
+[32m+[m[32m    customData:[m[41m [m
+[32m+[m[32m    physicsShape: [][m
+[32m+[m[32m    bones: [][m
+[32m+[m[32m    spriteID: 5e97eb03825dee720800000000000000[m
+[32m+[m[32m    internalID: 0[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    indices:[m[41m [m
+[32m+[m[32m    edges: [][m
+[32m+[m[32m    weights: [][m
+[32m+[m[32m    secondaryTextures: [][m
+[32m+[m[32m    spriteCustomMetadata:[m
+[32m+[m[32m      entries: [][m
+[32m+[m[32m    nameFileIdTable: {}[m
+[32m+[m[32m  mipmapLimitGroupName:[m[41m [m
+[32m+[m[32m  pSDRemoveMatte: 0[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/SourceImages/Items/MaxShield.png b/Assets/SourceImages/Items/MaxShield.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e283e8a[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/MaxShield.png[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mversion https://git-lfs.github.com/spec/v1[m
+[32m+[m[32moid sha256:259d4a193d6d64c795f4431a649ec981138eb53de190bd10ec58f6107122bafc[m
+[32m+[m[32msize 672444[m
+[1mdiff --git a/Assets/SourceImages/Items/MaxShield.png.meta b/Assets/SourceImages/Items/MaxShield.png.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4e70bce[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/MaxShield.png.meta[m
+[36m@@ -0,0 +1,117 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: a8ba38aad73f4e9459ad8e8b09b0ddfd[m
+[32m+[m[32mTextureImporter:[m
+[32m+[m[32m  internalIDToNameTable: [][m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  serializedVersion: 13[m
+[32m+[m[32m  mipmaps:[m
+[32m+[m[32m    mipMapMode: 0[m
+[32m+[m[32m    enableMipMap: 0[m
+[32m+[m[32m    sRGBTexture: 1[m
+[32m+[m[32m    linearTexture: 0[m
+[32m+[m[32m    fadeOut: 0[m
+[32m+[m[32m    borderMipMap: 0[m
+[32m+[m[32m    mipMapsPreserveCoverage: 0[m
+[32m+[m[32m    alphaTestReferenceValue: 0.5[m
+[32m+[m[32m    mipMapFadeDistanceStart: 1[m
+[32m+[m[32m    mipMapFadeDistanceEnd: 3[m
+[32m+[m[32m  bumpmap:[m
+[32m+[m[32m    convertToNormalMap: 0[m
+[32m+[m[32m    externalNormalMap: 0[m
+[32m+[m[32m    heightScale: 0.25[m
+[32m+[m[32m    normalMapFilter: 0[m
+[32m+[m[32m    flipGreenChannel: 0[m
+[32m+[m[32m  isReadable: 0[m
+[32m+[m[32m  streamingMipmaps: 0[m
+[32m+[m[32m  streamingMipmapsPriority: 0[m
+[32m+[m[32m  vTOnly: 0[m
+[32m+[m[32m  ignoreMipmapLimit: 0[m
+[32m+[m[32m  grayScaleToAlpha: 0[m
+[32m+[m[32m  generateCubemap: 6[m
+[32m+[m[32m  cubemapConvolution: 0[m
+[32m+[m[32m  seamlessCubemap: 0[m
+[32m+[m[32m  textureFormat: 1[m
+[32m+[m[32m  maxTextureSize: 2048[m
+[32m+[m[32m  textureSettings:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    filterMode: 1[m
+[32m+[m[32m    aniso: 1[m
+[32m+[m[32m    mipBias: 0[m
+[32m+[m[32m    wrapU: 1[m
+[32m+[m[32m    wrapV: 1[m
+[32m+[m[32m    wrapW: 0[m
+[32m+[m[32m  nPOTScale: 0[m
+[32m+[m[32m  lightmap: 0[m
+[32m+[m[32m  compressionQuality: 50[m
+[32m+[m[32m  spriteMode: 1[m
+[32m+[m[32m  spriteExtrude: 1[m
+[32m+[m[32m  spriteMeshType: 1[m
+[32m+[m[32m  alignment: 0[m
+[32m+[m[32m  spritePivot: {x: 0.5, y: 0.5}[m
+[32m+[m[32m  spritePixelsToUnits: 100[m
+[32m+[m[32m  spriteBorder: {x: 0, y: 0, z: 0, w: 0}[m
+[32m+[m[32m  spriteGenerateFallbackPhysicsShape: 1[m
+[32m+[m[32m  alphaUsage: 1[m
+[32m+[m[32m  alphaIsTransparency: 1[m
+[32m+[m[32m  spriteTessellationDetail: -1[m
+[32m+[m[32m  textureType: 8[m
+[32m+[m[32m  textureShape: 1[m
+[32m+[m[32m  singleChannelComponent: 0[m
+[32m+[m[32m  flipbookRows: 1[m
+[32m+[m[32m  flipbookColumns: 1[m
+[32m+[m[32m  maxTextureSizeSet: 0[m
+[32m+[m[32m  compressionQualitySet: 0[m
+[32m+[m[32m  textureFormatSet: 0[m
+[32m+[m[32m  ignorePngGamma: 0[m
+[32m+[m[32m  applyGammaDecoding: 0[m
+[32m+[m[32m  swizzle: 50462976[m
+[32m+[m[32m  cookieLightType: 0[m
+[32m+[m[32m  platformSettings:[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: DefaultTexturePlatform[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: Standalone[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  spriteSheet:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    sprites: [][m
+[32m+[m[32m    outline: [][m
+[32m+[m[32m    customData:[m[41m [m
+[32m+[m[32m    physicsShape: [][m
+[32m+[m[32m    bones: [][m
+[32m+[m[32m    spriteID: 5e97eb03825dee720800000000000000[m
+[32m+[m[32m    internalID: 0[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    indices:[m[41m [m
+[32m+[m[32m    edges: [][m
+[32m+[m[32m    weights: [][m
+[32m+[m[32m    secondaryTextures: [][m
+[32m+[m[32m    spriteCustomMetadata:[m
+[32m+[m[32m      entries: [][m
+[32m+[m[32m    nameFileIdTable: {}[m
+[32m+[m[32m  mipmapLimitGroupName:[m[41m [m
+[32m+[m[32m  pSDRemoveMatte: 0[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
+[1mdiff --git a/Assets/SourceImages/Items/ShieldRegen.png b/Assets/SourceImages/Items/ShieldRegen.png[m
+[1mnew file mode 100644[m
+[1mindex 0000000..798d861[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/ShieldRegen.png[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mversion https://git-lfs.github.com/spec/v1[m
+[32m+[m[32moid sha256:cbe7f24d050dc1bbd5dd295b0bce0f4177e266c1e90d57ff738d3ab373c8c324[m
+[32m+[m[32msize 695925[m
+[1mdiff --git a/Assets/SourceImages/Items/ShieldRegen.png.meta b/Assets/SourceImages/Items/ShieldRegen.png.meta[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4557393[m
+[1m--- /dev/null[m
+[1m+++ b/Assets/SourceImages/Items/ShieldRegen.png.meta[m
+[36m@@ -0,0 +1,117 @@[m
+[32m+[m[32mfileFormatVersion: 2[m
+[32m+[m[32mguid: 39118e63f0673434281a4407c6ae407c[m
+[32m+[m[32mTextureImporter:[m
+[32m+[m[32m  internalIDToNameTable: [][m
+[32m+[m[32m  externalObjects: {}[m
+[32m+[m[32m  serializedVersion: 13[m
+[32m+[m[32m  mipmaps:[m
+[32m+[m[32m    mipMapMode: 0[m
+[32m+[m[32m    enableMipMap: 0[m
+[32m+[m[32m    sRGBTexture: 1[m
+[32m+[m[32m    linearTexture: 0[m
+[32m+[m[32m    fadeOut: 0[m
+[32m+[m[32m    borderMipMap: 0[m
+[32m+[m[32m    mipMapsPreserveCoverage: 0[m
+[32m+[m[32m    alphaTestReferenceValue: 0.5[m
+[32m+[m[32m    mipMapFadeDistanceStart: 1[m
+[32m+[m[32m    mipMapFadeDistanceEnd: 3[m
+[32m+[m[32m  bumpmap:[m
+[32m+[m[32m    convertToNormalMap: 0[m
+[32m+[m[32m    externalNormalMap: 0[m
+[32m+[m[32m    heightScale: 0.25[m
+[32m+[m[32m    normalMapFilter: 0[m
+[32m+[m[32m    flipGreenChannel: 0[m
+[32m+[m[32m  isReadable: 0[m
+[32m+[m[32m  streamingMipmaps: 0[m
+[32m+[m[32m  streamingMipmapsPriority: 0[m
+[32m+[m[32m  vTOnly: 0[m
+[32m+[m[32m  ignoreMipmapLimit: 0[m
+[32m+[m[32m  grayScaleToAlpha: 0[m
+[32m+[m[32m  generateCubemap: 6[m
+[32m+[m[32m  cubemapConvolution: 0[m
+[32m+[m[32m  seamlessCubemap: 0[m
+[32m+[m[32m  textureFormat: 1[m
+[32m+[m[32m  maxTextureSize: 2048[m
+[32m+[m[32m  textureSettings:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    filterMode: 1[m
+[32m+[m[32m    aniso: 1[m
+[32m+[m[32m    mipBias: 0[m
+[32m+[m[32m    wrapU: 1[m
+[32m+[m[32m    wrapV: 1[m
+[32m+[m[32m    wrapW: 0[m
+[32m+[m[32m  nPOTScale: 0[m
+[32m+[m[32m  lightmap: 0[m
+[32m+[m[32m  compressionQuality: 50[m
+[32m+[m[32m  spriteMode: 1[m
+[32m+[m[32m  spriteExtrude: 1[m
+[32m+[m[32m  spriteMeshType: 1[m
+[32m+[m[32m  alignment: 0[m
+[32m+[m[32m  spritePivot: {x: 0.5, y: 0.5}[m
+[32m+[m[32m  spritePixelsToUnits: 100[m
+[32m+[m[32m  spriteBorder: {x: 0, y: 0, z: 0, w: 0}[m
+[32m+[m[32m  spriteGenerateFallbackPhysicsShape: 1[m
+[32m+[m[32m  alphaUsage: 1[m
+[32m+[m[32m  alphaIsTransparency: 1[m
+[32m+[m[32m  spriteTessellationDetail: -1[m
+[32m+[m[32m  textureType: 8[m
+[32m+[m[32m  textureShape: 1[m
+[32m+[m[32m  singleChannelComponent: 0[m
+[32m+[m[32m  flipbookRows: 1[m
+[32m+[m[32m  flipbookColumns: 1[m
+[32m+[m[32m  maxTextureSizeSet: 0[m
+[32m+[m[32m  compressionQualitySet: 0[m
+[32m+[m[32m  textureFormatSet: 0[m
+[32m+[m[32m  ignorePngGamma: 0[m
+[32m+[m[32m  applyGammaDecoding: 0[m
+[32m+[m[32m  swizzle: 50462976[m
+[32m+[m[32m  cookieLightType: 0[m
+[32m+[m[32m  platformSettings:[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: DefaultTexturePlatform[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  - serializedVersion: 4[m
+[32m+[m[32m    buildTarget: Standalone[m
+[32m+[m[32m    maxTextureSize: 2048[m
+[32m+[m[32m    resizeAlgorithm: 0[m
+[32m+[m[32m    textureFormat: -1[m
+[32m+[m[32m    textureCompression: 1[m
+[32m+[m[32m    compressionQuality: 50[m
+[32m+[m[32m    crunchedCompression: 0[m
+[32m+[m[32m    allowsAlphaSplitting: 0[m
+[32m+[m[32m    overridden: 0[m
+[32m+[m[32m    ignorePlatformSupport: 0[m
+[32m+[m[32m    androidETC2FallbackOverride: 0[m
+[32m+[m[32m    forceMaximumCompressionQuality_BC6H_BC7: 0[m
+[32m+[m[32m  spriteSheet:[m
+[32m+[m[32m    serializedVersion: 2[m
+[32m+[m[32m    sprites: [][m
+[32m+[m[32m    outline: [][m
+[32m+[m[32m    customData:[m[41m [m
+[32m+[m[32m    physicsShape: [][m
+[32m+[m[32m    bones: [][m
+[32m+[m[32m    spriteID: 5e97eb03825dee720800000000000000[m
+[32m+[m[32m    internalID: 0[m
+[32m+[m[32m    vertices: [][m
+[32m+[m[32m    indices:[m[41m [m
+[32m+[m[32m    edges: [][m
+[32m+[m[32m    weights: [][m
+[32m+[m[32m    secondaryTextures: [][m
+[32m+[m[32m    spriteCustomMetadata:[m
+[32m+[m[32m      entries: [][m
+[32m+[m[32m    nameFileIdTable: {}[m
+[32m+[m[32m  mipmapLimitGroupName:[m[41m [m
+[32m+[m[32m  pSDRemoveMatte: 0[m
+[32m+[m[32m  userData:[m[41m [m
+[32m+[m[32m  assetBundleName:[m[41m [m
+[32m+[m[32m  assetBundleVariant:[m[41m [m
