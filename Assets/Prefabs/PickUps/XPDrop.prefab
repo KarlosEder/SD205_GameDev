@@ -1552,7 +1552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc8640438a7f7a743bf3f6aebf8802e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ExperienceOrb
-  experienceGained: 50
+  experienceGained: 10
 --- !u!114 &-7720073634662571303
 MonoBehaviour:
   m_ObjectHideFlags: 0
