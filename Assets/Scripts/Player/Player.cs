@@ -34,6 +34,9 @@ public class Player : MonoBehaviour
     public int experienceCap;
 
     // Level / XP definition class
+    public Slider levelSlider;
+    public TextMeshProUGUI levelText; 
+
     [System.Serializable]
     public class LevelRange
     {
@@ -75,9 +78,6 @@ public class Player : MonoBehaviour
 
         UpdateUI();
 
-        // Item test
-        BurnDamage item = new BurnDamage();
-        items.Add(new ItemList(item, item.GiveName(), 2));
 
         // Start item loop
         StartCoroutine(CallItemUpdate());
@@ -111,10 +111,18 @@ public class Player : MonoBehaviour
         experience += amount;
 
         LevelUpChecker();
+        UpdateUI();
     }
 
     void LevelUpChecker()
     {
+        // Debug
+        if (LevelUpUI.Instance == null)
+        {
+            Debug.LogError("LevelUpUI.Instance is NULL – is LevelUpUI in the scene?");
+            return;
+        }
+
         if (experience >= experienceCap)
         {
             level++;
@@ -132,10 +140,42 @@ public class Player : MonoBehaviour
             }
 
             experienceCap += experienceCapIncrease;
+
+            // Trigger level-up selection
+            LevelUpUI.Instance.Show(this);
         } 
     }
 
     // Items
+    public void AddItem(ItemData data)
+    {
+        ItemList existing = items.Find(i => i.name == data.itemName);
+
+        if (existing != null)
+        {
+            existing.stacks++;
+            existing.item.OnStacksChanged(this, existing.stacks);
+            return;
+        }
+
+        Items newItem = data.itemType switch
+        {
+            ItemType.MaxHealth => new MaxHealth(),
+            ItemType.HealthRegen => new HealthRegen(),
+            ItemType.MaxShield => new MaxShield(),
+            ItemType.ShieldRegen => new ShieldRegen(),
+            ItemType.DamageUp => new DamageUp(),
+            ItemType.BurnDamage => new BurnDamage(),
+            ItemType.FireRateUp => new FireRateUp(),
+            ItemType.KnockBackUp => new KnockBackUp(),
+            _ => null
+        };
+
+        if (newItem != null)
+            items.Add(new ItemList(newItem, data.itemName, 1));
+    }
+
+
     IEnumerator CallItemUpdate()
     {
         // Stop updating items if dead
@@ -286,6 +326,20 @@ public class Player : MonoBehaviour
 
     private void UpdateUI()
     {
+        // Level/XP bar
+        float xpForCurrentLevel = experience; 
+        float xpForNextLevel = experienceCap;
+
+        if (levelSlider != null)
+        {
+            levelSlider.value = xpForCurrentLevel / xpForNextLevel;
+        }
+
+        if (levelText != null)
+        {
+            levelText.text = $" Level: {level}  ( {experience} / {experienceCap} XP )";
+        }
+
         // Update sliders
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(currentHealth);
