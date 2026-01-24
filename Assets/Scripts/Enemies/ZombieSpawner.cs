@@ -8,6 +8,8 @@ public class ZombieSpawner : MonoBehaviour
     [Header("References")]
     public GameObject zombiePrefab;
     public Transform player;
+    public GameObject damageNumbersPrefab;
+    public Canvas canvas;
 
     [Header("Spawn Settings")]
     public float minSpawnDistance = 20f;
@@ -107,6 +109,7 @@ public class ZombieSpawner : MonoBehaviour
 
         GameObject zombie = Instantiate(zombiePrefab, spawnPos, Quaternion.identity);
 
+        // Configure ZombieAI
         ZombieAI zombieAI = zombie.GetComponent<ZombieAI>();
         if (zombieAI != null)
         {
@@ -114,10 +117,28 @@ public class ZombieSpawner : MonoBehaviour
             zombieAI.player = player;
         }
 
+        // Configure Target
         Target zombieTarget = zombie.GetComponent<Target>();
         if (zombieTarget != null)
         {
             zombieTarget.health = health;
+            
+            // Set up damage number references
+            if (damageNumbersPrefab != null)
+                zombieTarget.damageNumbers = damageNumbersPrefab;
+            
+            if (canvas != null)
+                zombieTarget.uiCanvas = canvas;
+                
+            // Set player and gun references
+            if (player != null)
+            {
+                zombieTarget.player = player.GetComponent<Player>();
+                
+                Gun gun = player.GetComponentInChildren<Gun>();
+                if (gun != null)
+                    zombieTarget.gun = gun;
+            }
         }
 
         zombiesAlive++;
