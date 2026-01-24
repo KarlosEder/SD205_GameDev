@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class ZombieSpawner : MonoBehaviour
 {
     [Header("References")]
-    public GameObject zombiePrefab;
+    public GameObject[] zombiePrefabs;
     public Transform player;
     public GameObject damageNumbersPrefab;
     public Canvas canvas;
@@ -107,7 +107,16 @@ public class ZombieSpawner : MonoBehaviour
             return;
         }
 
-        GameObject zombie = Instantiate(zombiePrefab, spawnPos, Quaternion.identity);
+        // Pick a random zombie variant
+        GameObject randomZombiePrefab = zombiePrefabs[Random.Range(0, zombiePrefabs.Length)];
+        GameObject zombie = Instantiate(randomZombiePrefab, spawnPos, Quaternion.identity);
+
+        // Make animator independent so zombies don't interfere with each other
+        Animator zombieAnimator = zombie.GetComponent<Animator>();
+        if (zombieAnimator != null)
+        {
+            zombieAnimator.runtimeAnimatorController = Instantiate(zombieAnimator.runtimeAnimatorController);
+        }
 
         // Configure ZombieAI
         ZombieAI zombieAI = zombie.GetComponent<ZombieAI>();
@@ -123,14 +132,12 @@ public class ZombieSpawner : MonoBehaviour
         {
             zombieTarget.health = health;
             
-            // Set up damage number references
             if (damageNumbersPrefab != null)
                 zombieTarget.damageNumbers = damageNumbersPrefab;
             
             if (canvas != null)
                 zombieTarget.uiCanvas = canvas;
                 
-            // Set player and gun references
             if (player != null)
             {
                 zombieTarget.player = player.GetComponent<Player>();
