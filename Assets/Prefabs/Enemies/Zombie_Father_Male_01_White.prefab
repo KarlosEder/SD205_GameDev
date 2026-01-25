@@ -154,9 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropRateManager
   drops:
-  - name: 
-    itemPrefab: {fileID: 0}
-    dropRate: 0
+  - name: Blue XP
+    itemPrefab: {fileID: 8548559983966909991, guid: 3c615e564c90dc549a8179a7dcd10cdd, type: 3}
+    dropRate: 100
   - name: 
     itemPrefab: {fileID: 0}
     dropRate: 0

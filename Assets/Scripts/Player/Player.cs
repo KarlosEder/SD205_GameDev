@@ -1,3 +1,4 @@
+using NUnit.Framework.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -34,7 +35,12 @@ public class Player : MonoBehaviour
     public int experienceCap;
 
     // Level / XP definition class
+    public Slider xpSlider;
+    public TextMeshProUGUI xpText;
+    public TextMeshProUGUI levelText;
+
     [System.Serializable]
+
     public class LevelRange
     {
         public int startLevel;
@@ -74,10 +80,7 @@ public class Player : MonoBehaviour
         shieldCounter.text = currentShield.ToString() + "/" + maxShield.ToString();
 
         UpdateUI();
-
-        // Item test
-        BurnDamage item = new BurnDamage();
-        items.Add(new ItemList(item, item.GiveName(), 2));
+        UpdateXPUI();
 
         // Start item loop
         StartCoroutine(CallItemUpdate());
@@ -111,14 +114,15 @@ public class Player : MonoBehaviour
         experience += amount;
 
         LevelUpChecker();
+        UpdateXPUI();
     }
 
     void LevelUpChecker()
     {
-        if (experience >= experienceCap)
+        while (experience >= experienceCap)
         {
+            experience -= experienceCap; // XP rollover
             level++;
-            experience = experienceCap;
 
             int experienceCapIncrease = 0;
 
@@ -132,10 +136,59 @@ public class Player : MonoBehaviour
             }
 
             experienceCap += experienceCapIncrease;
-        } 
+
+            // Level up effects 
+            Debug.Log($"Leveled up! New level: {level}");
+
+            // Trigger level-up UI
+            if (LevelUpUI.Instance != null)
+            {
+                LevelUpUI.Instance.Show(this);
+            }
+        }
+    }
+
+    private void UpdateXPUI()
+    {
+        if (xpSlider != null)
+            xpSlider.value = (float)experience / experienceCap;
+
+        if (xpText != null)
+            xpText.text = $"{experience} / {experienceCap} XP";
+
+        if (levelText != null)
+            levelText.text = $"Level {level}";
     }
 
     // Items
+    public void AddItem(ItemData data)
+    {
+        ItemList existing = items.Find(i => i.name == data.itemName);
+
+        if (existing != null)
+        {
+            existing.stacks++;
+            existing.item.OnStacksChanged(this, existing.stacks);
+            return;
+        }
+
+        Items newItem = data.itemType switch
+        {
+            ItemType.MaxHealth => new MaxHealth(),
+            ItemType.HealthRegen => new HealthRegen(),
+            ItemType.MaxShield => new MaxShield(),
+            ItemType.ShieldRegen => new ShieldRegen(),
+            ItemType.DamageUp => new DamageUp(),
+            ItemType.BurnDamage => new BurnDamage(),
+            ItemType.FireRateUp => new FireRateUp(),
+            ItemType.KnockBackUp => new KnockBackUp(),
+            _ => null
+        };
+
+        if (newItem != null)
+            items.Add(new ItemList(newItem, data.itemName, 1));
+    }
+
     IEnumerator CallItemUpdate()
     {
         // Stop updating items if dead
