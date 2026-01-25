@@ -21,6 +21,7 @@ public class ZombieSpawner : MonoBehaviour
     public float timeBetweenWaves = 5f;
 
     [Header("UI/Debug")]
+    public GameObject winScreen;
     public bool autoStartWaves = true;
     public TMPro.TextMeshProUGUI waveText;
 
@@ -71,6 +72,24 @@ public class ZombieSpawner : MonoBehaviour
         }
 
         Debug.Log("All waves completed!");
+        ShowWinScreen();
+    }
+
+    void ShowWinScreen()
+    {
+        if (winScreen != null)
+        {
+            winScreen.SetActive(true);
+            Time.timeScale = 0f;
+
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Debug.LogWarning("Win screen not assigned!");
+        }
     }
 
     IEnumerator SpawnWave()

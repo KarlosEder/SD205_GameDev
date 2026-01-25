@@ -6,6 +6,8 @@ using TMPro;
 
 public class Gun : MonoBehaviour
 {
+    public UIManager uiManager;
+
     // Weapon properties
     public float damage = 10f;
     public float range = 100f;
@@ -67,9 +69,22 @@ public class Gun : MonoBehaviour
     [SerializeField]
     private Animator PlayerAnimator;
 
+    void Awake()
+    {
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+            if (audioSource == null)
+                Debug.LogWarning($"Gun {gameObject.name} has no AudioSource assigned!");
+        }
+    }
+
     // Store initial position
     private void Start()
     {
+        if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
+
         initialLocalPos = gunPivot.localPosition;
         initialLocalRotation = gunPivot.localRotation;
 
@@ -78,7 +93,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
-        if (UIManager.IsPaused)
+        if (uiManager != null && uiManager.GetIsPaused())
             return;
 
         // When paused
@@ -148,34 +163,30 @@ public class Gun : MonoBehaviour
     // Fire weapon
     void Shoot()
     {
-        // Animations
-        if (gunAnimator != null)
-            gunAnimator.SetTrigger("Fire");
-
         // Play VFX
         muzzleFlash.Play();
 
+        // Debug SFX
+        Debug.Log($"audioSource: {audioSource}");
+        Debug.Log($"gunshotClips: {gunshotClips}");
+        Debug.Log($"gunshotClips.Length: {(gunshotClips != null ? gunshotClips.Length : -1)}");
+
         // Play SFX
-        if (audioSource != null && gunshotClips != null && gunshotClips.Length > 0)
+        if (SoundEffectsManager.Instance != null && SoundEffectsManager.Instance.audioSrc != null)
         {
-            // Select random audio clip
+            // Pick random clip
             int index;
             do
             {
                 index = Random.Range(0, gunshotClips.Length);
             }
             while (index == lastShotIndex && gunshotClips.Length > 1);
-
-            // Stop from repeating same audio clip
             lastShotIndex = index;
+
             AudioClip clip = gunshotClips[index];
 
-            // Variation in volume / pitch
-            audioSource.pitch = Random.Range(0.95f, 1.05f);
-            float volume = Random.Range(0.9f, 1.1f);
-
-            audioSource.PlayOneShot(clip, volume);
-            audioSource.pitch = 1f;
+            // Play via persistent AudioManager SFX AudioSource
+            SoundEffectsManager.Instance.audioSrc.PlayOneShot(clip, 1f);
         }
 
         // Raycast
@@ -266,18 +277,18 @@ public class Gun : MonoBehaviour
         ammoCounter.text = "RELOADING";
 
         // Mag removal/insert sound 
-        if (audioSource != null && reloadMag != null)
+        if (SoundEffectsManager.Instance != null && SoundEffectsManager.Instance.audioSrc != null && reloadMag != null)
         {
-            audioSource.PlayOneShot(reloadMag, 1f);
+            SoundEffectsManager.Instance.audioSrc.PlayOneShot(reloadMag, 1f);
         }
 
         // Wait
         yield return new WaitForSeconds(reloadSpeed * 0.7f); // e.g., magazine takes 70% of the reload
 
         // Play cocking sound after inserting mag
-        if (audioSource != null && reloadCock != null)
+        if (SoundEffectsManager.Instance != null && SoundEffectsManager.Instance.audioSrc != null && reloadCock != null)
         {
-            audioSource.PlayOneShot(reloadCock, 1f);
+            SoundEffectsManager.Instance.audioSrc.PlayOneShot(reloadCock, 1f);
         }
 
         // Finish reload

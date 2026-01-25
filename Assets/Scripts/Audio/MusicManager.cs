@@ -23,6 +23,8 @@ public class MusicManager : MonoBehaviour
         // Set singleton
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     private void OnDestroy()
